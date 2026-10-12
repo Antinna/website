@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en" class="amp-dark-mode"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="description" content="Build, validate, and export JSON-LD structured data visually. No coding required."/><meta name="theme-color" content="#0284c7"/><title>JSON LD Visual Editor &#x2014; Structure Your Data Visually</title><link rel="icon" type="image/svg+xml" href="data:image/svg+xml,&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 100 100&quot;&gt;&lt;text y=&quot;.9em&quot; font-size=&quot;90&quot;&gt;&#x1F517;&lt;/text&gt;&lt;/svg&gt;"/><style type="text/css">/* layer: preflights */
+*,::before,::after{--un-rotate:0;--un-rotate-x:0;--un-rotate-y:0;--un-rotate-z:0;--un-scale-x:1;--un-scale-y:1;--un-scale-z:1;--un-skew-x:0;--un-skew-y:0;--un-translate-x:0;--un-translate-y:0;--un-translate-z:0;--un-pan-x: ;--un-pan-y: ;--un-pinch-zoom: ;--un-scroll-snap-strictness:proximity;--un-ordinal: ;--un-slashed-zero: ;--un-numeric-figure: ;--un-numeric-spacing: ;--un-numeric-fraction: ;--un-border-spacing-x:0;--un-border-spacing-y:0;--un-ring-offset-shadow:0 0 rgb(0 0 0 / 0);--un-ring-shadow:0 0 rgb(0 0 0 / 0);--un-shadow-inset: ;--un-shadow:0 0 rgb(0 0 0 / 0);--un-ring-inset: ;--un-ring-offset-width:0px;--un-ring-offset-color:#fff;--un-ring-width:0px;--un-ring-color:rgb(147 197 253 / 0.5);--un-blur: ;--un-brightness: ;--un-contrast: ;--un-drop-shadow: ;--un-grayscale: ;--un-hue-rotate: ;--un-invert: ;--un-saturate: ;--un-sepia: ;--un-backdrop-blur: ;--un-backdrop-brightness: ;--un-backdrop-contrast: ;--un-backdrop-grayscale: ;--un-backdrop-hue-rotate: ;--un-backdrop-invert: ;--un-backdrop-opacity: ;--un-backdrop-saturate: ;--un-backdrop-sepia: ;}::backdrop{--un-rotate:0;--un-rotate-x:0;--un-rotate-y:0;--un-rotate-z:0;--un-scale-x:1;--un-scale-y:1;--un-scale-z:1;--un-skew-x:0;--un-skew-y:0;--un-translate-x:0;--un-translate-y:0;--un-translate-z:0;--un-pan-x: ;--un-pan-y: ;--un-pinch-zoom: ;--un-scroll-snap-strictness:proximity;--un-ordinal: ;--un-slashed-zero: ;--un-numeric-figure: ;--un-numeric-spacing: ;--un-numeric-fraction: ;--un-border-spacing-x:0;--un-border-spacing-y:0;--un-ring-offset-shadow:0 0 rgb(0 0 0 / 0);--un-ring-shadow:0 0 rgb(0 0 0 / 0);--un-shadow-inset: ;--un-shadow:0 0 rgb(0 0 0 / 0);--un-ring-inset: ;--un-ring-offset-width:0px;--un-ring-offset-color:#fff;--un-ring-width:0px;--un-ring-color:rgb(147 197 253 / 0.5);--un-blur: ;--un-brightness: ;--un-contrast: ;--un-drop-shadow: ;--un-grayscale: ;--un-hue-rotate: ;--un-invert: ;--un-saturate: ;--un-sepia: ;--un-backdrop-blur: ;--un-backdrop-brightness: ;--un-backdrop-contrast: ;--un-backdrop-grayscale: ;--un-backdrop-hue-rotate: ;--un-backdrop-invert: ;--un-backdrop-opacity: ;--un-backdrop-saturate: ;--un-backdrop-sepia: ;}
+/* layer: icons */
+.i-carbon-application{--un-icon:url("data:image/svg+xml;utf8,%3Csvg viewBox='0 0 32 32' width='1.2em' height='1.2em' xmlns='http://www.w3.org/2000/svg' %3E%3Cpath fill='currentColor' d='M16 18H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2M6 6v10h10V6Zm20 6v4h-4v-4zm0-2h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2m0 12v4h-4v-4zm0-2h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2m-10 2v4h-4v-4zm0-2h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2'/%3E%3C/svg%3E");-webkit-mask:var(--un-icon) no-repeat;mask:var(--un-icon) no-repeat;-webkit-mask-size:100% 100%;mask-size:100% 100%;background-color:currentColor;color:inherit;width:1.2em;height:1.2em;}
+.i-carbon-checkmark{--un-icon:url("data:image/svg+xml;utf8,%3Csvg viewBox='0 0 32 32' width='1.2em' height='1.2em' xmlns='http://www.w3.org/2000/svg' %3E%3Cpath fill='currentColor' d='m13 24l-9-9l1.414-1.414L13 21.171L26.586 7.586L28 9z'/%3E%3C/svg%3E");-webkit-mask:var(--un-icon) no-repeat;mask:var(--un-icon) no-repeat;-webkit-mask-size:100% 100%;mask-size:100% 100%;background-color:currentColor;color:inherit;width:1.2em;height:1.2em;}
+.i-carbon-checkmark-outline{--un-icon:url("data:image/svg+xml;utf8,%3Csvg viewBox='0 0 32 32' width='1.2em' height='1.2em' xmlns='http://www.w3.org/2000/svg' %3E%3Cpath fill='currentColor' d='m14 21.414l-5-5.001L10.413 15L14 18.586L21.585 11L23 12.415z'/%3E%3Cpath fill='currentColor' d='M16 2a14 14 0 1 0 14 14A14 14 0 0 0 16 2m0 26a12 12 0 1 1 12-12a12 12 0 0 1-12 12'/%3E%3C/svg%3E");-webkit-mask:var(--un-icon) no-repeat;mask:var(--un-icon) no-repeat;-webkit-mask-size:100% 100%;mask-size:100% 100%;background-color:currentColor;color:inherit;width:1.2em;height:1.2em;}
+.i-carbon-chevron-right{--un-icon:url("data:image/svg+xml;utf8,%3Csvg viewBox='0 0 32 32' width='1.2em' height='1.2em' xmlns='http://www.w3.org/2000/svg' %3E%3Cpath fill='currentColor' d='M22 16L12 26l-1.4-1.4l8.6-8.6l-8.6-8.6L12 6z'/%3E%3C/svg%3E");-webkit-mask:var(--un-icon) no-repeat;mask:var(--un-icon) no-repeat;-webkit-mask-size:100% 100%;mask-size:100% 100%;background-color:currentColor;color:inherit;width:1.2em;height:1.2em;}
+.i-carbon-close-outline{--un-icon:url("data:image/svg+xml;utf8,%3Csvg viewBox='0 0 32 32' width='1.2em' height='1.2em' xmlns='http://www.w3.org/2000/svg' %3E%3Cpath fill='currentColor' d='M16 2C8.2 2 2 8.2 2 16s6.2 14 14 14s14-6.2 14-14S23.8 2 16 2m0 26C9.4 28 4 22.6 4 16S9.4 4 16 4s12 5.4 12 12s-5.4 12-12 12'/%3E%3Cpath fill='currentColor' d='M21.4 23L16 17.6L10.6 23L9 21.4l5.4-5.4L9 10.6L10.6 9l5.4 5.4L21.4 9l1.6 1.6l-5.4 5.4l5.4 5.4z'/%3E%3C/svg%3E");-webkit-mask:var(--un-icon) no-repeat;mask:var(--un-icon) no-repeat;-webkit-mask-size:100% 100%;mask-size:100% 100%;background-color:currentColor;color:inherit;width:1.2em;height:1.2em;}
+.i-carbon-compare{--un-icon:url("data:image/svg+xml;utf8,%3Csvg viewBox='0 0 32 32' width='1.2em' height='1.2em' xmlns='http://www.w3.org/2000/svg' %3E%3Cpath fill='currentColor' d='M28 6H18V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h10v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2M4 15h6.17l-2.58 2.59L9 19l5-5l-5-5l-1.41 1.41L10.17 13H4V4h12v20H4Zm12 13v-2a2 2 0 0 0 2-2V8h10v9h-6.17l2.58-2.59L23 13l-5 5l5 5l1.41-1.41L21.83 19H28v9Z'/%3E%3C/svg%3E");-webkit-mask:var(--un-icon) no-repeat;mask:var(--un-icon) no-repeat;-webkit-mask-size:100% 100%;mask-size:100% 100%;background-color:currentColor;color:inherit;width:1.2em;height:1.2em;}
+.i-carbon-document{--un-icon:url("data:image/svg+xml;utf8,%3Csvg viewBox='0 0 32 32' width='1.2em' height='1.2em' xmlns='http://www.w3.org/2000/svg' %3E%3Cpath fill='currentColor' d='m25.7 9.3l-7-7c-.2-.2-.4-.3-.7-.3H8c-1.1 0-2 .9-2 2v24c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V10c0-.3-.1-.5-.3-.7M18 4.4l5.6 5.6H18zM24 28H8V4h8v6c0 1.1.9 2 2 2h6z'/%3E%3Cpath fill='currentColor' d='M10 22h12v2H10zm0-6h12v2H10z'/%3E%3C/svg%3E");-webkit-mask:var(--un-icon) no-repeat;mask:var(--un-icon) no-repeat;-webkit-mask-size:100% 100%;mask-size:100% 100%;background-color:currentColor;color:inherit;width:1.2em;height:1.2em;}
+.i-carbon-export{--un-icon:url("data:image/svg+xml;utf8,%3Csvg viewBox='0 0 32 32' width='1.2em' height='1.2em' xmlns='http://www.w3.org/2000/svg' %3E%3Cpath fill='currentColor' d='M26 24v4H6v-4H4v4l.008-.005A2 2 0 0 0 6 30h20a2 2 0 0 0 2-2v-4ZM6 12l1.411 1.405L15 5.825V24h2V5.825l7.591 7.58L26 12L16 2z'/%3E%3C/svg%3E");-webkit-mask:var(--un-icon) no-repeat;mask:var(--un-icon) no-repeat;-webkit-mask-size:100% 100%;mask-size:100% 100%;background-color:currentColor;color:inherit;width:1.2em;height:1.2em;}
+.i-carbon-favorite{--un-icon:url("data:image/svg+xml;utf8,%3Csvg viewBox='0 0 32 32' width='1.2em' height='1.2em' xmlns='http://www.w3.org/2000/svg' %3E%3Cpath fill='currentColor' d='M22.45 6a5.47 5.47 0 0 1 3.91 1.64a5.7 5.7 0 0 1 0 8L16 26.13L5.64 15.64a5.7 5.7 0 0 1 0-8a5.48 5.48 0 0 1 7.82 0l2.54 2.6l2.53-2.58A5.44 5.44 0 0 1 22.45 6m0-2a7.47 7.47 0 0 0-5.34 2.24L16 7.36l-1.11-1.12a7.49 7.49 0 0 0-10.68 0a7.72 7.72 0 0 0 0 10.82L16 29l11.79-11.94a7.72 7.72 0 0 0 0-10.82A7.5 7.5 0 0 0 22.45 4'/%3E%3C/svg%3E");-webkit-mask:var(--un-icon) no-repeat;mask:var(--un-icon) no-repeat;-webkit-mask-size:100% 100%;mask-size:100% 100%;background-color:currentColor;color:inherit;width:1.2em;height:1.2em;}
+.i-carbon-flow-branch{--un-icon:url("data:image/svg+xml;utf8,%3Csvg viewBox='0 0 32 32' width='1.2em' height='1.2em' xmlns='http://www.w3.org/2000/svg' %3E%3Cpath fill='currentColor' d='M26 28a4.006 4.006 0 0 1-3.873-3H18c-2.757 0-5-2.243-5-5v-8c0-1.654-1.346-3-3-3h-.126A4.01 4.01 0 0 1 6 12c-2.206 0-4-1.794-4-4s1.794-4 4-4a4.01 4.01 0 0 1 3.874 3h12.253A4.006 4.006 0 0 1 26 4c2.206 0 4 1.794 4 4s-1.794 4-4 4a4.006 4.006 0 0 1-3.873-3h-8.13A4.98 4.98 0 0 1 15 12v8c0 1.654 1.346 3 3 3h4.127A4.006 4.006 0 0 1 26 20c2.206 0 4 1.794 4 4s-1.794 4-4 4m0-6c-1.102 0-2 .898-2 2s.898 2 2 2s2-.897 2-2s-.897-2-2-2m0-16c-1.102 0-2 .897-2 2s.898 2 2 2s2-.897 2-2s-.897-2-2-2M6 6c-1.103 0-2 .897-2 2s.897 2 2 2s2-.897 2-2s-.897-2-2-2'/%3E%3C/svg%3E");-webkit-mask:var(--un-icon) no-repeat;mask:var(--un-icon) no-repeat;-webkit-mask-size:100% 100%;mask-size:100% 100%;background-color:currentColor;color:inherit;width:1.2em;height:1.2em;}
+.i-carbon-logo-discord{--un-icon:url("data:image/svg+xml;utf8,%3Csvg viewBox='0 0 32 32' width='1.2em' height='1.2em' xmlns='http://www.w3.org/2000/svg' %3E%3Cpath fill='currentColor' d='M25.7 7.1Q23 5.9 20 5.3h-.1c-.2.4-.5 1-.7 1.5c-2.2-.3-4.3-.3-6.4 0c-.2-.5-.5-1-.7-1.5H12q-3 .45-5.7 1.8C2.7 12.5 1.7 17.8 2.2 23v.1c2.4 1.8 4.7 2.8 7 3.5h.1c.5-.7 1-1.5 1.4-2.3v-.1c-.8-.3-1.5-.6-2.2-1c-.1 0-.1-.1 0-.1c.1-.1.3-.2.4-.3H9c4.6 2.1 9.5 2.1 14.1 0h.1c.1.1.3.2.4.3c.1 0 0 .1 0 .1c-.7.4-1.4.8-2.2 1c0 0-.1.1 0 .1c.4.8.9 1.6 1.4 2.3h.1c2.3-.7 4.6-1.8 7-3.5V23c.6-6-1-11.2-4.2-15.9M11.4 19.9c-1.4 0-2.5-1.3-2.5-2.8s1.1-2.8 2.5-2.8s2.5 1.3 2.5 2.8s-1.1 2.8-2.5 2.8m9.3 0c-1.4 0-2.5-1.3-2.5-2.8s1.1-2.8 2.5-2.8s2.5 1.3 2.5 2.8s-1.1 2.8-2.5 2.8'/%3E%3C/svg%3E");-webkit-mask:var(--un-icon) no-repeat;mask:var(--un-icon) no-repeat;-webkit-mask-size:100% 100%;mask-size:100% 100%;background-color:currentColor;color:inherit;width:1.2em;height:1.2em;}
+.i-carbon-logo-github{--un-icon:url("data:image/svg+xml;utf8,%3Csvg viewBox='0 0 32 32' width='1.2em' height='1.2em' xmlns='http://www.w3.org/2000/svg' %3E%3Cpath fill='currentColor' fill-rule='evenodd' d='M16 2a14 14 0 0 0-4.43 27.28c.7.13 1-.3 1-.67v-2.38c-3.89.84-4.71-1.88-4.71-1.88a3.7 3.7 0 0 0-1.62-2.05c-1.27-.86.1-.85.1-.85a2.94 2.94 0 0 1 2.14 1.45a3 3 0 0 0 4.08 1.16a2.93 2.93 0 0 1 .88-1.87c-3.1-.36-6.37-1.56-6.37-6.92a5.4 5.4 0 0 1 1.44-3.76a5 5 0 0 1 .14-3.7s1.17-.38 3.85 1.43a13.3 13.3 0 0 1 7 0c2.67-1.81 3.84-1.43 3.84-1.43a5 5 0 0 1 .14 3.7a5.4 5.4 0 0 1 1.44 3.76c0 5.38-3.27 6.56-6.39 6.91a3.33 3.33 0 0 1 .95 2.59v3.84c0 .46.25.81 1 .67A14 14 0 0 0 16 2'/%3E%3C/svg%3E");-webkit-mask:var(--un-icon) no-repeat;mask:var(--un-icon) no-repeat;-webkit-mask-size:100% 100%;mask-size:100% 100%;background-color:currentColor;color:inherit;width:1.2em;height:1.2em;}
+.i-carbon-logo-twitter{--un-icon:url("data:image/svg+xml;utf8,%3Csvg viewBox='0 0 32 32' width='1.2em' height='1.2em' xmlns='http://www.w3.org/2000/svg' %3E%3Cpath fill='currentColor' d='M11.548 25.752c9.056 0 14.01-7.503 14.01-14.01c0-.213 0-.425-.015-.636A10 10 0 0 0 28 8.556a9.8 9.8 0 0 1-2.828.776a4.94 4.94 0 0 0 2.164-2.724a9.9 9.9 0 0 1-3.126 1.195a4.929 4.929 0 0 0-8.392 4.491A13.98 13.98 0 0 1 5.67 7.15a4.93 4.93 0 0 0 1.525 6.573a4.9 4.9 0 0 1-2.235-.617v.063a4.926 4.926 0 0 0 3.95 4.827a4.9 4.9 0 0 1-2.223.084a4.93 4.93 0 0 0 4.6 3.42A9.88 9.88 0 0 1 4 23.54a13.94 13.94 0 0 0 7.547 2.209'/%3E%3C/svg%3E");-webkit-mask:var(--un-icon) no-repeat;mask:var(--un-icon) no-repeat;-webkit-mask-size:100% 100%;mask-size:100% 100%;background-color:currentColor;color:inherit;width:1.2em;height:1.2em;}
+.i-carbon-moon{--un-icon:url("data:image/svg+xml;utf8,%3Csvg viewBox='0 0 32 32' width='1.2em' height='1.2em' xmlns='http://www.w3.org/2000/svg' %3E%3Cpath fill='currentColor' d='M13.503 5.414a15.076 15.076 0 0 0 11.593 18.194a11.1 11.1 0 0 1-7.975 3.39c-.138 0-.278.005-.418 0a11.094 11.094 0 0 1-3.2-21.584M14.98 3a1 1 0 0 0-.175.016a13.096 13.096 0 0 0 1.825 25.981c.164.006.328 0 .49 0a13.07 13.07 0 0 0 10.703-5.555a1.01 1.01 0 0 0-.783-1.565A13.08 13.08 0 0 1 15.89 4.38A1.015 1.015 0 0 0 14.98 3'/%3E%3C/svg%3E");-webkit-mask:var(--un-icon) no-repeat;mask:var(--un-icon) no-repeat;-webkit-mask-size:100% 100%;mask-size:100% 100%;background-color:currentColor;color:inherit;width:1.2em;height:1.2em;}
+.i-carbon-play{--un-icon:url("data:image/svg+xml;utf8,%3Csvg viewBox='0 0 32 32' width='1.2em' height='1.2em' xmlns='http://www.w3.org/2000/svg' %3E%3Cpath fill='currentColor' d='M7 28a1 1 0 0 1-1-1V5a1 1 0 0 1 1.482-.876l20 11a1 1 0 0 1 0 1.752l-20 11A1 1 0 0 1 7 28M8 6.69v18.62L24.925 16Z'/%3E%3C/svg%3E");-webkit-mask:var(--un-icon) no-repeat;mask:var(--un-icon) no-repeat;-webkit-mask-size:100% 100%;mask-size:100% 100%;background-color:currentColor;color:inherit;width:1.2em;height:1.2em;}
+.i-carbon-process{--un-icon:url("data:image/svg+xml;utf8,%3Csvg viewBox='0 0 32 32' width='1.2em' height='1.2em' xmlns='http://www.w3.org/2000/svg' %3E%3Cpath fill='currentColor' d='M12 25c-.738 0-1.376.405-1.723 1h-5.63l2.648-5.092c.227.055.461.092.705.092c1.654 0 3-1.346 3-3s-1.346-3-3-3s-3 1.346-3 3c0 .679.235 1.298.616 1.801L2.113 26.54A1 1 0 0 0 3 28h7.277c.347.595.985 1 1.723 1a2 2 0 0 0 0-4m-4-8a1.001 1.001 0 0 1 0 2a1 1 0 0 1 0-2m21.887 9.539l-4.04-7.771A2 2 0 1 0 24 20c.075 0 .147-.014.22-.023L27.353 26h-4.537A2.995 2.995 0 0 0 20 24c-1.654 0-3 1.346-3 3s1.346 3 3 3a2.995 2.995 0 0 0 2.816-2H29a1 1 0 0 0 .887-1.462ZM20 28a1.001 1.001 0 0 1 0-2a1.001 1.001 0 0 1 0 2m1-20a3 3 0 0 0-.705.092L16.887 1.54C16.715 1.207 16.357 1 16 1s-.715.207-.887.539L11.22 9.023C11.148 9.014 11.076 9 11 9a2 2 0 1 0 1.846 1.232L16 4.168l2.616 5.03A2.97 2.97 0 0 0 18 11c0 1.654 1.346 3 3 3s3-1.346 3-3s-1.346-3-3-3m0 4a1.001 1.001 0 0 1 0-2a1.001 1.001 0 0 1 0 2'/%3E%3C/svg%3E");-webkit-mask:var(--un-icon) no-repeat;mask:var(--un-icon) no-repeat;-webkit-mask-size:100% 100%;mask-size:100% 100%;background-color:currentColor;color:inherit;width:1.2em;height:1.2em;}
+.i-carbon-rocket{--un-icon:url("data:image/svg+xml;utf8,%3Csvg viewBox='0 0 32 32' width='1.2em' height='1.2em' xmlns='http://www.w3.org/2000/svg' %3E%3Cpath fill='currentColor' d='m7.288 23.292l7.997-7.997l1.414 1.414l-7.997 7.997z'/%3E%3Cpath fill='currentColor' d='M17 30a1 1 0 0 1-.37-.07a1 1 0 0 1-.62-.79l-1-7l2-.28l.75 5.27L21 24.52V17a1 1 0 0 1 .29-.71l4.07-4.07A8.94 8.94 0 0 0 28 5.86V4h-1.86a8.94 8.94 0 0 0-6.36 2.64l-4.07 4.07A1 1 0 0 1 15 11H7.48l-2.61 3.26l5.27.75l-.28 2l-7-1a1 1 0 0 1-.79-.62a1 1 0 0 1 .15-1l4-5A1 1 0 0 1 7 9h7.59l3.77-3.78A10.92 10.92 0 0 1 26.14 2H28a2 2 0 0 1 2 2v1.86a10.92 10.92 0 0 1-3.22 7.78L23 17.41V25a1 1 0 0 1-.38.78l-5 4A1 1 0 0 1 17 30'/%3E%3C/svg%3E");-webkit-mask:var(--un-icon) no-repeat;mask:var(--un-icon) no-repeat;-webkit-mask-size:100% 100%;mask-size:100% 100%;background-color:currentColor;color:inherit;width:1.2em;height:1.2em;}
+.i-carbon-search{--un-icon:url("data:image/svg+xml;utf8,%3Csvg viewBox='0 0 32 32' width='1.2em' height='1.2em' xmlns='http://www.w3.org/2000/svg' %3E%3Cpath fill='currentColor' d='m29 27.586l-7.552-7.552a11.018 11.018 0 1 0-1.414 1.414L27.586 29ZM4 13a9 9 0 1 1 9 9a9.01 9.01 0 0 1-9-9'/%3E%3C/svg%3E");-webkit-mask:var(--un-icon) no-repeat;mask:var(--un-icon) no-repeat;-webkit-mask-size:100% 100%;mask-size:100% 100%;background-color:currentColor;color:inherit;width:1.2em;height:1.2em;}
+/* layer: shortcuts */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;padding-left:1.5rem;padding-right:1.5rem;text-align:center;}
+.navbar{position:fixed;top:0;z-index:50;height:72px;width:100%;display:flex;align-items:center;border-bottom-width:1px;border-color:rgb(226 232 240 / 0.5);background-color:rgb(255 255 255 / 0.8);padding-left:1rem;padding-right:1rem;--un-backdrop-blur:blur(24px);-webkit-backdrop-filter:var(--un-backdrop-blur) var(--un-backdrop-brightness) var(--un-backdrop-contrast) var(--un-backdrop-grayscale) var(--un-backdrop-hue-rotate) var(--un-backdrop-invert) var(--un-backdrop-opacity) var(--un-backdrop-saturate) var(--un-backdrop-sepia);backdrop-filter:var(--un-backdrop-blur) var(--un-backdrop-brightness) var(--un-backdrop-contrast) var(--un-backdrop-grayscale) var(--un-backdrop-hue-rotate) var(--un-backdrop-invert) var(--un-backdrop-opacity) var(--un-backdrop-saturate) var(--un-backdrop-sepia);transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms;transition-duration:300ms;}
+.hero-subtitle{margin-left:auto;margin-right:auto;margin-top:1.5rem;max-width:42rem;font-size:1.125rem;line-height:1.75rem;--un-text-opacity:1;color:rgb(71 85 105 / var(--un-text-opacity));line-height:1.625;}
+.nav-container{margin-left:auto;margin-right:auto;width:100%;max-width:80rem;display:flex;align-items:center;justify-content:space-between;}
+.section-container{margin-left:auto;margin-right:auto;width:100%;max-width:80rem;padding-left:1.5rem;padding-right:1.5rem;}
+.section-header{margin-left:auto;margin-right:auto;margin-bottom:4rem;max-width:42rem;text-align:center;}
+.section-badge{margin-bottom:1rem;display:inline-flex;align-items:center;gap:0.5rem;font-size:0.75rem;line-height:1rem;--un-text-opacity:1;color:rgb(2 132 199 / var(--un-text-opacity));font-weight:700;letter-spacing:0.2em;text-transform:uppercase;}
+.section-title{margin-bottom:1rem;font-size:1.875rem;line-height:2.25rem;--un-text-opacity:1;color:rgb(15 23 42 / var(--un-text-opacity));font-weight:800;line-height:1.25;}
+.desktop-links{display:none;align-items:center;gap:0.25rem;}
+.icon-btn{width:2.5rem;height:2.5rem;display:flex;cursor:pointer;align-items:center;justify-content:center;border-radius:0.75rem;border-style:none;background-color:transparent;--un-text-opacity:1;color:rgb(100 116 139 / var(--un-text-opacity));transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms;transition-duration:200ms;}
+.logo-box{width:2.25rem;height:2.25rem;display:flex;align-items:center;justify-content:center;border-radius:0.75rem;--un-shadow:var(--un-shadow-inset) 0 10px 15px -3px var(--un-shadow-color, rgb(0 0 0 / 0.1)),var(--un-shadow-inset) 0 4px 6px -4px var(--un-shadow-color, rgb(0 0 0 / 0.1));box-shadow:var(--un-ring-offset-shadow), var(--un-ring-shadow), var(--un-shadow);--un-shadow-color:rgb(2 132 199 / 0.2);}
+.actions-group{display:flex;align-items:center;gap:0.5rem;}
+.card-body{display:flex;flex-direction:column;gap:1rem;padding:1.5rem;}
+.logo{display:flex;align-items:center;gap:0.625rem;font-size:1.25rem;line-height:1.75rem;--un-text-opacity:1;color:rgb(15 23 42 / var(--un-text-opacity));font-weight:800;letter-spacing:-0.025em;text-decoration:none;}
+.nav-left{display:flex;align-items:center;gap:0.75rem;}
+.btn-accent{display:inline-flex;cursor:pointer;align-items:center;justify-content:center;gap:0.5rem;border-radius:0.75rem;border-style:none;--un-gradient-from-position:0%;--un-gradient-from:rgb(249 115 22 / var(--un-from-opacity, 1)) var(--un-gradient-from-position);--un-gradient-to-position:100%;--un-gradient-to:rgb(249 115 22 / 0) var(--un-gradient-to-position);--un-gradient-stops:var(--un-gradient-from), var(--un-gradient-to);--un-gradient-to:rgb(234 88 12 / var(--un-to-opacity, 1)) var(--un-gradient-to-position);--un-gradient-shape:to right in oklch;--un-gradient:var(--un-gradient-shape), var(--un-gradient-stops);background-image:linear-gradient(var(--un-gradient));padding-left:1.5rem;padding-right:1.5rem;padding-top:0.75rem;padding-bottom:0.75rem;--un-text-opacity:1;color:rgb(255 255 255 / var(--un-text-opacity));font-weight:600;text-decoration:none;--un-shadow:var(--un-shadow-inset) 0 10px 15px -3px var(--un-shadow-color, rgb(0 0 0 / 0.1)),var(--un-shadow-inset) 0 4px 6px -4px var(--un-shadow-color, rgb(0 0 0 / 0.1));box-shadow:var(--un-ring-offset-shadow), var(--un-ring-shadow), var(--un-shadow);--un-shadow-color:rgb(249 115 22 / 0.25);transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms;transition-duration:200ms;}
+.btn-ghost{display:inline-flex;cursor:pointer;align-items:center;justify-content:center;gap:0.5rem;border-radius:0.75rem;background-color:transparent;padding-left:1rem;padding-right:1rem;padding-top:0.5rem;padding-bottom:0.5rem;--un-text-opacity:1;color:rgb(71 85 105 / var(--un-text-opacity));font-weight:600;text-decoration:none;transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms;transition-duration:200ms;}
+.btn-primary{display:inline-flex;cursor:pointer;align-items:center;justify-content:center;gap:0.5rem;border-radius:0.75rem;border-style:none;--un-gradient-from-position:0%;--un-gradient-from:rgb(2 132 199 / var(--un-from-opacity, 1)) var(--un-gradient-from-position);--un-gradient-to-position:100%;--un-gradient-to:rgb(2 132 199 / 0) var(--un-gradient-to-position);--un-gradient-stops:var(--un-gradient-from), var(--un-gradient-to);--un-gradient-to:rgb(2 132 199 / var(--un-to-opacity, 1)) var(--un-gradient-to-position);--un-gradient-shape:to right in oklch;--un-gradient:var(--un-gradient-shape), var(--un-gradient-stops);background-image:linear-gradient(var(--un-gradient));padding-left:1.5rem;padding-right:1.5rem;padding-top:0.75rem;padding-bottom:0.75rem;--un-text-opacity:1;color:rgb(255 255 255 / var(--un-text-opacity));font-weight:600;text-decoration:none;--un-shadow:var(--un-shadow-inset) 0 10px 15px -3px var(--un-shadow-color, rgb(0 0 0 / 0.1)),var(--un-shadow-inset) 0 4px 6px -4px var(--un-shadow-color, rgb(0 0 0 / 0.1));box-shadow:var(--un-ring-offset-shadow), var(--un-ring-shadow), var(--un-shadow);--un-shadow-color:rgb(2 132 199 / 0.25);transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms;transition-duration:200ms;}
+.btn-secondary{display:inline-flex;cursor:pointer;align-items:center;justify-content:center;gap:0.5rem;border-width:1px;--un-border-opacity:1;border-color:rgb(226 232 240 / var(--un-border-opacity));border-radius:0.75rem;--un-bg-opacity:1;background-color:rgb(255 255 255 / var(--un-bg-opacity));padding-left:1.5rem;padding-right:1.5rem;padding-top:0.75rem;padding-bottom:0.75rem;--un-text-opacity:1;color:rgb(51 65 85 / var(--un-text-opacity));font-weight:600;text-decoration:none;--un-shadow:var(--un-shadow-inset) 0 1px 2px 0 var(--un-shadow-color, rgb(0 0 0 / 0.05));box-shadow:var(--un-ring-offset-shadow), var(--un-ring-shadow), var(--un-shadow);transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms;transition-duration:200ms;}
+.btn-accent:hover{--un-translate-y:-0.125rem;transform:translateX(var(--un-translate-x)) translateY(var(--un-translate-y)) translateZ(var(--un-translate-z)) rotate(var(--un-rotate)) rotateX(var(--un-rotate-x)) rotateY(var(--un-rotate-y)) rotateZ(var(--un-rotate-z)) skewX(var(--un-skew-x)) skewY(var(--un-skew-y)) scaleX(var(--un-scale-x)) scaleY(var(--un-scale-y)) scaleZ(var(--un-scale-z));--un-gradient-from-position:0%;--un-gradient-from:rgb(234 88 12 / var(--un-from-opacity, 1)) var(--un-gradient-from-position);--un-gradient-to-position:100%;--un-gradient-to:rgb(234 88 12 / 0) var(--un-gradient-to-position);--un-gradient-stops:var(--un-gradient-from), var(--un-gradient-to);--un-gradient-to:rgb(194 65 12 / var(--un-to-opacity, 1)) var(--un-gradient-to-position);--un-shadow:var(--un-shadow-inset) 0 20px 25px -5px var(--un-shadow-color, rgb(0 0 0 / 0.1)),var(--un-shadow-inset) 0 8px 10px -6px var(--un-shadow-color, rgb(0 0 0 / 0.1));box-shadow:var(--un-ring-offset-shadow), var(--un-ring-shadow), var(--un-shadow);--un-shadow-color:rgb(249 115 22 / 0.3);}
+.btn-primary:hover{--un-translate-y:-0.125rem;transform:translateX(var(--un-translate-x)) translateY(var(--un-translate-y)) translateZ(var(--un-translate-z)) rotate(var(--un-rotate)) rotateX(var(--un-rotate-x)) rotateY(var(--un-rotate-y)) rotateZ(var(--un-rotate-z)) skewX(var(--un-skew-x)) skewY(var(--un-skew-y)) scaleX(var(--un-scale-x)) scaleY(var(--un-scale-y)) scaleZ(var(--un-scale-z));--un-gradient-from-position:0%;--un-gradient-from:rgb(2 132 199 / var(--un-from-opacity, 1)) var(--un-gradient-from-position);--un-gradient-to-position:100%;--un-gradient-to:rgb(2 132 199 / 0) var(--un-gradient-to-position);--un-gradient-stops:var(--un-gradient-from), var(--un-gradient-to);--un-gradient-to:rgb(3 105 161 / var(--un-to-opacity, 1)) var(--un-gradient-to-position);--un-shadow:var(--un-shadow-inset) 0 20px 25px -5px var(--un-shadow-color, rgb(0 0 0 / 0.1)),var(--un-shadow-inset) 0 8px 10px -6px var(--un-shadow-color, rgb(0 0 0 / 0.1));box-shadow:var(--un-ring-offset-shadow), var(--un-ring-shadow), var(--un-shadow);--un-shadow-color:rgb(2 132 199 / 0.3);}
+.btn-secondary:hover{--un-translate-y:-0.125rem;transform:translateX(var(--un-translate-x)) translateY(var(--un-translate-y)) translateZ(var(--un-translate-z)) rotate(var(--un-rotate)) rotateX(var(--un-rotate-x)) rotateY(var(--un-rotate-y)) rotateZ(var(--un-rotate-z)) skewX(var(--un-skew-x)) skewY(var(--un-skew-y)) scaleX(var(--un-scale-x)) scaleY(var(--un-scale-y)) scaleZ(var(--un-scale-z));--un-bg-opacity:1;background-color:rgb(248 250 252 / var(--un-bg-opacity));--un-shadow:var(--un-shadow-inset) 0 4px 6px -1px var(--un-shadow-color, rgb(0 0 0 / 0.1)),var(--un-shadow-inset) 0 2px 4px -2px var(--un-shadow-color, rgb(0 0 0 / 0.1));box-shadow:var(--un-ring-offset-shadow), var(--un-ring-shadow), var(--un-shadow);}
+.card:hover{--un-translate-y:-0.25rem;transform:translateX(var(--un-translate-x)) translateY(var(--un-translate-y)) translateZ(var(--un-translate-z)) rotate(var(--un-rotate)) rotateX(var(--un-rotate-x)) rotateY(var(--un-rotate-y)) rotateZ(var(--un-rotate-z)) skewX(var(--un-skew-x)) skewY(var(--un-skew-y)) scaleX(var(--un-scale-x)) scaleY(var(--un-scale-y)) scaleZ(var(--un-scale-z));--un-shadow:var(--un-shadow-inset) 0 10px 15px -3px var(--un-shadow-color, rgb(0 0 0 / 0.1)),var(--un-shadow-inset) 0 4px 6px -4px var(--un-shadow-color, rgb(0 0 0 / 0.1));box-shadow:var(--un-ring-offset-shadow), var(--un-ring-shadow), var(--un-shadow);--un-shadow-color:rgb(226 232 240 / 0.6);}
+.btn-accent:active{--un-scale-x:0.97;--un-scale-y:0.97;transform:translateX(var(--un-translate-x)) translateY(var(--un-translate-y)) translateZ(var(--un-translate-z)) rotate(var(--un-rotate)) rotateX(var(--un-rotate-x)) rotateY(var(--un-rotate-y)) rotateZ(var(--un-rotate-z)) skewX(var(--un-skew-x)) skewY(var(--un-skew-y)) scaleX(var(--un-scale-x)) scaleY(var(--un-scale-y)) scaleZ(var(--un-scale-z));}
+.btn-primary:active{--un-scale-x:0.97;--un-scale-y:0.97;transform:translateX(var(--un-translate-x)) translateY(var(--un-translate-y)) translateZ(var(--un-translate-z)) rotate(var(--un-rotate)) rotateX(var(--un-rotate-x)) rotateY(var(--un-rotate-y)) rotateZ(var(--un-rotate-z)) skewX(var(--un-skew-x)) skewY(var(--un-skew-y)) scaleX(var(--un-scale-x)) scaleY(var(--un-scale-y)) scaleZ(var(--un-scale-z));}
+.btn-secondary:active{--un-scale-x:0.97;--un-scale-y:0.97;transform:translateX(var(--un-translate-x)) translateY(var(--un-translate-y)) translateZ(var(--un-translate-z)) rotate(var(--un-rotate)) rotateX(var(--un-rotate-x)) rotateY(var(--un-rotate-y)) rotateZ(var(--un-rotate-z)) skewX(var(--un-skew-x)) skewY(var(--un-skew-y)) scaleX(var(--un-scale-x)) scaleY(var(--un-scale-y)) scaleZ(var(--un-scale-z));}
+.icon-btn:active{--un-scale-x:0.9;--un-scale-y:0.9;transform:translateX(var(--un-translate-x)) translateY(var(--un-translate-y)) translateZ(var(--un-translate-z)) rotate(var(--un-rotate)) rotateX(var(--un-rotate-x)) rotateY(var(--un-rotate-y)) rotateZ(var(--un-rotate-z)) skewX(var(--un-skew-x)) skewY(var(--un-skew-y)) scaleX(var(--un-scale-x)) scaleY(var(--un-scale-y)) scaleZ(var(--un-scale-z));}
+.card{overflow:hidden;border-width:1px;border-color:rgb(226 232 240 / 0.6);border-radius:1rem;background-color:rgb(255 255 255 / 0.8);--un-shadow:var(--un-shadow-inset) 0 1px 2px 0 var(--un-shadow-color, rgb(0 0 0 / 0.05));box-shadow:var(--un-ring-offset-shadow), var(--un-ring-shadow), var(--un-shadow);--un-shadow-color:rgb(226 232 240 / 0.5);--un-backdrop-blur:blur(4px);-webkit-backdrop-filter:var(--un-backdrop-blur) var(--un-backdrop-brightness) var(--un-backdrop-contrast) var(--un-backdrop-grayscale) var(--un-backdrop-hue-rotate) var(--un-backdrop-invert) var(--un-backdrop-opacity) var(--un-backdrop-saturate) var(--un-backdrop-sepia);backdrop-filter:var(--un-backdrop-blur) var(--un-backdrop-brightness) var(--un-backdrop-contrast) var(--un-backdrop-grayscale) var(--un-backdrop-hue-rotate) var(--un-backdrop-invert) var(--un-backdrop-opacity) var(--un-backdrop-saturate) var(--un-backdrop-sepia);transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms;transition-duration:300ms;}
+.footer{border-top-width:1px;border-color:rgb(226 232 240 / 0.6);--un-bg-opacity:1;background-color:rgb(248 250 252 / var(--un-bg-opacity));padding-top:3rem;padding-bottom:3rem;padding-left:1.5rem;padding-right:1.5rem;}
+.amp-dark-mode .btn-secondary{--un-border-opacity:1;border-color:rgb(51 65 85 / var(--un-border-opacity));--un-bg-opacity:1;background-color:rgb(30 41 59 / var(--un-bg-opacity));--un-text-opacity:1;color:rgb(226 232 240 / var(--un-text-opacity));}
+.amp-dark-mode .card{border-color:rgb(30 41 59 / 0.6);background-color:rgb(15 23 42 / 0.8);--un-shadow:0 0 var(--un-shadow-color, rgb(0 0 0 / 0));box-shadow:var(--un-ring-offset-shadow), var(--un-ring-shadow), var(--un-shadow);}
+.amp-dark-mode .footer{border-color:rgb(30 41 59 / 0.6);--un-bg-opacity:1;background-color:rgb(2 6 23 / var(--un-bg-opacity));}
+.amp-dark-mode .navbar{border-color:rgb(30 41 59 / 0.5);background-color:rgb(15 23 42 / 0.8);}
+.nav-item{border-radius:0.5rem;padding-left:1rem;padding-right:1rem;padding-top:0.5rem;padding-bottom:0.5rem;font-size:0.875rem;line-height:1.25rem;--un-text-opacity:1;color:rgb(71 85 105 / var(--un-text-opacity));font-weight:500;text-decoration:none;transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms;transition-duration:200ms;}
+.amp-dark-mode .btn-ghost:hover{--un-bg-opacity:1;background-color:rgb(30 41 59 / var(--un-bg-opacity));}
+.btn-ghost:hover{--un-bg-opacity:1;background-color:rgb(241 245 249 / var(--un-bg-opacity));}
+.amp-dark-mode .btn-secondary:hover{--un-bg-opacity:1;background-color:rgb(51 65 85 / var(--un-bg-opacity));}
+.amp-dark-mode .icon-btn:hover{--un-bg-opacity:1;background-color:rgb(30 41 59 / var(--un-bg-opacity));--un-text-opacity:1;color:rgb(56 189 248 / var(--un-text-opacity));}
+.icon-btn:hover{--un-bg-opacity:1;background-color:rgb(241 245 249 / var(--un-bg-opacity));--un-text-opacity:1;color:rgb(2 132 199 / var(--un-text-opacity));}
+.amp-dark-mode .nav-item:hover{background-color:rgb(30 41 59 / 0.8);--un-text-opacity:1;color:rgb(56 189 248 / var(--un-text-opacity));}
+.nav-item:hover{background-color:rgb(241 245 249 / 0.8);--un-text-opacity:1;color:rgb(2 132 199 / var(--un-text-opacity));}
+.hero-title{font-size:2.25rem;line-height:2.5rem;--un-text-opacity:1;color:rgb(15 23 42 / var(--un-text-opacity));font-weight:800;line-height:1.1;letter-spacing:-0.025em;}
+.logo-text{font-size:1.125rem;line-height:1.75rem;--un-text-opacity:1;color:rgb(15 23 42 / var(--un-text-opacity));font-weight:700;letter-spacing:-0.025em;text-transform:capitalize;}
+.section-desc{font-size:1.125rem;line-height:1.75rem;--un-text-opacity:1;color:rgb(71 85 105 / var(--un-text-opacity));line-height:1.625;}
+.amp-dark-mode .btn-ghost{--un-text-opacity:1;color:rgb(203 213 225 / var(--un-text-opacity));}
+.amp-dark-mode .hero-subtitle,
+.amp-dark-mode .icon-btn,
+.amp-dark-mode .nav-item,
+.amp-dark-mode .section-desc{--un-text-opacity:1;color:rgb(148 163 184 / var(--un-text-opacity));}
+.amp-dark-mode .hero-title,
+.amp-dark-mode .logo,
+.amp-dark-mode .logo-text,
+.amp-dark-mode .section-title{--un-text-opacity:1;color:rgb(255 255 255 / var(--un-text-opacity));}
+.amp-dark-mode .section-badge{--un-text-opacity:1;color:rgb(56 189 248 / var(--un-text-opacity));}
+.amp-dark-mode .card:hover{--un-shadow:0 0 var(--un-shadow-color, rgb(0 0 0 / 0));box-shadow:var(--un-ring-offset-shadow), var(--un-ring-shadow), var(--un-shadow);}
+@media (min-width: 640px){
+.hero-subtitle{font-size:1.25rem;line-height:1.75rem;}
+.hero-title{font-size:3rem;line-height:1;}
+.section-title{font-size:2.25rem;line-height:2.5rem;}
+}
+@media (min-width: 1024px){
+.desktop-links{display:flex;}
+.section-container{padding-left:2rem;padding-right:2rem;}
+.hero-title{font-size:4.5rem;line-height:1;}
+.section-title{font-size:3rem;line-height:1;}
+}
+/* layer: default */
+.pointer-events-none{pointer-events:none;}
+.visible{visibility:visible;}
+.absolute{position:absolute;}
+.relative{position:relative;}
+.static{position:static;}
+.inset-0{inset:0;}
+.-bottom-24{bottom:-6rem;}
+.-left-24{left:-6rem;}
+.-right-24{right:-6rem;}
+.-top-24{top:-6rem;}
+.-top-3{top:-0.75rem;}
+.-top-3\.5{top:-0.875rem;}
+.bottom-\[10\%\]{bottom:10%;}
+.left-\[10\%\]{left:10%;}
+.left-\[16\%\]{left:16%;}
+.left-\[30\%\]{left:30%;}
+.left-1\/2{left:50%;}
+.right-\[10\%\]{right:10%;}
+.right-\[16\%\]{right:16%;}
+.top-\[15\%\]{top:15%;}
+.top-\[60\%\]{top:60%;}
+.top-10{top:2.5rem;}
+.z-10{z-index:10;}
+.grid{display:grid;}
+.col-span-2{grid-column:span 2/span 2;}
+.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr));}
+.grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr));}
+.mx-auto{margin-left:auto;margin-right:auto;}
+.my{margin-top:1rem;margin-bottom:1rem;}
+.mb-16{margin-bottom:4rem;}
+.mb-4{margin-bottom:1rem;}
+.me{margin-inline-end:1rem;}
+.ml-1{margin-left:0.25rem;}
+.ml-3{margin-left:0.75rem;}
+.ml-4{margin-left:1rem;}
+.mt-0\.5{margin-top:0.125rem;}
+.mt-12{margin-top:3rem;}
+.mt-2{margin-top:0.5rem;}
+.mt-4{margin-top:1rem;}
+.mt-8{margin-top:2rem;}
+.inline{display:inline;}
+.block{display:block;}
+.hidden{display:none;}
+.h-0\.5{height:0.125rem;}
+.h-1{height:0.25rem;}
+.h-1\.5{height:0.375rem;}
+.h-10{height:2.5rem;}
+.h-12{height:3rem;}
+.h-14{height:3.5rem;}
+.h-16{height:4rem;}
+.h-20{height:5rem;}
+.h-3{height:0.75rem;}
+.h-5{height:1.25rem;}
+.h-6{height:1.5rem;}
+.h-64{height:16rem;}
+.h-72{height:18rem;}
+.h-8{height:2rem;}
+.h-9{height:2.25rem;}
+.h-96{height:24rem;}
+.max-w-2xl{max-width:42rem;}
+.max-w-3xl{max-width:48rem;}
+.max-w-4xl{max-width:56rem;}
+.max-w-5xl{max-width:64rem;}
+.max-w-7xl{max-width:80rem;}
+.max-w-xl{max-width:36rem;}
+.min-h-screen{min-height:100vh;}
+.min-w-\[90px\]{min-width:90px;}
+.w-1{width:0.25rem;}
+.w-1\.5{width:0.375rem;}
+.w-10{width:2.5rem;}
+.w-12{width:3rem;}
+.w-14{width:3.5rem;}
+.w-16{width:4rem;}
+.w-20{width:5rem;}
+.w-3{width:0.75rem;}
+.w-5{width:1.25rem;}
+.w-6{width:1.5rem;}
+.w-64{width:16rem;}
+.w-72{width:18rem;}
+.w-8{width:2rem;}
+.w-9{width:2.25rem;}
+.w-96{width:24rem;}
+.w-full{width:100%;}
+.flex{display:flex;}
+.inline-flex{display:inline-flex;}
+.flex-1{flex:1 1 0%;}
+.flex-shrink-0{flex-shrink:0;}
+.flex-col{flex-direction:column;}
+.flex-wrap{flex-wrap:wrap;}
+.-translate-x-1\/2{--un-translate-x:-50%;transform:translateX(var(--un-translate-x)) translateY(var(--un-translate-y)) translateZ(var(--un-translate-z)) rotate(var(--un-rotate)) rotateX(var(--un-rotate-x)) rotateY(var(--un-rotate-y)) rotateZ(var(--un-rotate-z)) skewX(var(--un-skew-x)) skewY(var(--un-skew-y)) scaleX(var(--un-scale-x)) scaleY(var(--un-scale-y)) scaleZ(var(--un-scale-z));}
+.transform{transform:translateX(var(--un-translate-x)) translateY(var(--un-translate-y)) translateZ(var(--un-translate-z)) rotate(var(--un-rotate)) rotateX(var(--un-rotate-x)) rotateY(var(--un-rotate-y)) rotateZ(var(--un-rotate-z)) skewX(var(--un-skew-x)) skewY(var(--un-skew-y)) scaleX(var(--un-scale-x)) scaleY(var(--un-scale-y)) scaleZ(var(--un-scale-z));}
+@keyframes pulse{0%, 100% {opacity:1} 50% {opacity:.5}}
+.animate-pulse{animation:pulse 2s cubic-bezier(0.4,0,.6,1) infinite;}
+.cursor-pointer{cursor:pointer;}
+.items-start{align-items:flex-start;}
+.items-center{align-items:center;}
+.items-baseline{align-items:baseline;}
+.justify-center{justify-content:center;}
+.justify-between{justify-content:space-between;}
+.gap-1{gap:0.25rem;}
+.gap-1\.5{gap:0.375rem;}
+.gap-10{gap:2.5rem;}
+.gap-12{gap:3rem;}
+.gap-16{gap:4rem;}
+.gap-2{gap:0.5rem;}
+.gap-2\.5{gap:0.625rem;}
+.gap-3{gap:0.75rem;}
+.gap-4{gap:1rem;}
+.gap-6{gap:1.5rem;}
+.gap-8{gap:2rem;}
+.gap-x-12{column-gap:3rem;}
+.gap-y-6{row-gap:1.5rem;}
+.divide-x>:not([hidden])~:not([hidden]){--un-divide-x-reverse:0;border-left-width:calc(1px * calc(1 - var(--un-divide-x-reverse)));border-right-width:calc(1px * var(--un-divide-x-reverse));}
+.amp-dark-mode .dark\:border-surface-700\/60,
+.amp-dark-mode .dark\:divide-surface-700\/60>:not([hidden])~:not([hidden]){border-color:rgb(51 65 85 / 0.6);}
+.amp-dark-mode .dark\:divide-surface-700>:not([hidden])~:not([hidden]){--un-divide-opacity:1;border-color:rgb(51 65 85 / var(--un-divide-opacity));}
+.border-surface-200\/60,
+.divide-surface-200\/60>:not([hidden])~:not([hidden]){border-color:rgb(226 232 240 / 0.6);}
+.divide-surface-200>:not([hidden])~:not([hidden]){--un-divide-opacity:1;border-color:rgb(226 232 240 / var(--un-divide-opacity));}
+.overflow-hidden{overflow:hidden;}
+.overflow-x-auto{overflow-x:auto;}
+.border{border-width:1px;}
+.border-y{border-top-width:1px;border-bottom-width:1px;}
+.border-b{border-bottom-width:1px;}
+.border-b-2{border-bottom-width:2px;}
+.border-t{border-top-width:1px;}
+.amp-dark-mode .dark\:border-primary-800\/30{border-color:rgb(7 89 133 / 0.3);}
+.amp-dark-mode .dark\:border-surface-700{--un-border-opacity:1;border-color:rgb(51 65 85 / var(--un-border-opacity));}
+.amp-dark-mode .dark\:border-surface-800{--un-border-opacity:1;border-color:rgb(30 41 59 / var(--un-border-opacity));}
+.amp-dark-mode .dark\:border-surface-800\/50{border-color:rgb(30 41 59 / 0.5);}
+.amp-dark-mode .dark\:border-surface-800\/60{border-color:rgb(30 41 59 / 0.6);}
+.border-primary-200\/50{border-color:rgb(186 230 253 / 0.5);}
+.border-primary-500{--un-border-opacity:1;border-color:rgb(2 132 199 / var(--un-border-opacity));}
+.border-surface-200{--un-border-opacity:1;border-color:rgb(226 232 240 / var(--un-border-opacity));}
+.border-surface-200\/50{border-color:rgb(226 232 240 / 0.5);}
+.border-transparent{border-color:transparent;}
+.border-white\/20{border-color:rgb(255 255 255 / 0.2);}
+.rounded-2xl{border-radius:1rem;}
+.rounded-full{border-radius:9999px;}
+.rounded-lg{border-radius:0.5rem;}
+.rounded-md{border-radius:0.375rem;}
+.rounded-xl{border-radius:0.75rem;}
+.amp-dark-mode .dark\:bg-accent-500\/5{background-color:rgb(249 115 22 / 0.05);}
+.amp-dark-mode .dark\:bg-blue-950\/30{background-color:rgb(23 37 84 / 0.3);}
+.amp-dark-mode .dark\:bg-blue-950\/40{background-color:rgb(23 37 84 / 0.4);}
+.amp-dark-mode .dark\:bg-cyan-950\/30{background-color:rgb(8 51 68 / 0.3);}
+.amp-dark-mode .dark\:bg-cyan-950\/40{background-color:rgb(8 51 68 / 0.4);}
+.amp-dark-mode .dark\:bg-green-900\/30{background-color:rgb(20 83 45 / 0.3);}
+.amp-dark-mode .dark\:bg-green-950\/30{background-color:rgb(5 46 22 / 0.3);}
+.amp-dark-mode .dark\:bg-green-950\/40{background-color:rgb(5 46 22 / 0.4);}
+.amp-dark-mode .dark\:bg-orange-950\/30{background-color:rgb(67 20 7 / 0.3);}
+.amp-dark-mode .dark\:bg-orange-950\/40{background-color:rgb(67 20 7 / 0.4);}
+.amp-dark-mode .dark\:bg-pink-950\/30{background-color:rgb(80 7 36 / 0.3);}
+.amp-dark-mode .dark\:bg-pink-950\/40{background-color:rgb(80 7 36 / 0.4);}
+.amp-dark-mode .dark\:bg-primary-500\/5,
+.amp-dark-mode .dark\:bg-primary-600\/5{background-color:rgb(2 132 199 / 0.05);}
+.amp-dark-mode .dark\:bg-primary-900\/20{background-color:rgb(12 74 110 / 0.2);}
+.amp-dark-mode .dark\:bg-primary-900\/30{background-color:rgb(12 74 110 / 0.3);}
+.amp-dark-mode .dark\:bg-purple-950\/30{background-color:rgb(59 7 100 / 0.3);}
+.amp-dark-mode .dark\:bg-purple-950\/40{background-color:rgb(59 7 100 / 0.4);}
+.amp-dark-mode .dark\:bg-surface-600{--un-bg-opacity:1;background-color:rgb(71 85 105 / var(--un-bg-opacity));}
+.amp-dark-mode .dark\:bg-surface-800{--un-bg-opacity:1;background-color:rgb(30 41 59 / var(--un-bg-opacity));}
+.amp-dark-mode .dark\:bg-surface-800\/50{background-color:rgb(30 41 59 / 0.5);}
+.amp-dark-mode .dark\:bg-surface-800\/80{background-color:rgb(30 41 59 / 0.8);}
+.amp-dark-mode .dark\:bg-surface-900{--un-bg-opacity:1;background-color:rgb(15 23 42 / var(--un-bg-opacity));}
+.amp-dark-mode .dark\:bg-surface-900\/60{background-color:rgb(15 23 42 / 0.6);}
+.amp-dark-mode .dark\:bg-surface-950{--un-bg-opacity:1;background-color:rgb(2 6 23 / var(--un-bg-opacity));}
+.amp-dark-mode .dark\:bg-surface-950\/50{background-color:rgb(2 6 23 / 0.5);}
+.bg-accent-400\/10{background-color:rgb(251 146 60 / 0.1);}
+.bg-accent-500\/10{background-color:rgb(249 115 22 / 0.1);}
+.bg-blue-50{--un-bg-opacity:1;background-color:rgb(239 246 255 / var(--un-bg-opacity));}
+.bg-cyan-50{--un-bg-opacity:1;background-color:rgb(236 254 255 / var(--un-bg-opacity));}
+.bg-green-100{--un-bg-opacity:1;background-color:rgb(220 252 231 / var(--un-bg-opacity));}
+.bg-green-400{--un-bg-opacity:1;background-color:rgb(74 222 128 / var(--un-bg-opacity));}
+.bg-green-400\/80{background-color:rgb(74 222 128 / 0.8);}
+.bg-green-50{--un-bg-opacity:1;background-color:rgb(240 253 244 / var(--un-bg-opacity));}
+.bg-orange-50{--un-bg-opacity:1;background-color:rgb(255 247 237 / var(--un-bg-opacity));}
+.bg-pink-50{--un-bg-opacity:1;background-color:rgb(253 242 248 / var(--un-bg-opacity));}
+.bg-primary-100{--un-bg-opacity:1;background-color:rgb(224 242 254 / var(--un-bg-opacity));}
+.bg-primary-300\/10{background-color:rgb(125 211 252 / 0.1);}
+.bg-primary-400\/10{background-color:rgb(56 189 248 / 0.1);}
+.bg-primary-50{--un-bg-opacity:1;background-color:rgb(240 249 255 / var(--un-bg-opacity));}
+.bg-primary-50\/50{background-color:rgb(240 249 255 / 0.5);}
+.bg-primary-500{--un-bg-opacity:1;background-color:rgb(2 132 199 / var(--un-bg-opacity));}
+.bg-purple-50{--un-bg-opacity:1;background-color:rgb(250 245 255 / var(--un-bg-opacity));}
+.bg-red-400{--un-bg-opacity:1;background-color:rgb(248 113 113 / var(--un-bg-opacity));}
+.bg-red-400\/80{background-color:rgb(248 113 113 / 0.8);}
+.bg-surface-100{--un-bg-opacity:1;background-color:rgb(241 245 249 / var(--un-bg-opacity));}
+.bg-surface-100\/80{background-color:rgb(241 245 249 / 0.8);}
+.bg-surface-300{--un-bg-opacity:1;background-color:rgb(203 213 225 / var(--un-bg-opacity));}
+.bg-surface-50{--un-bg-opacity:1;background-color:rgb(248 250 252 / var(--un-bg-opacity));}
+.bg-surface-50\/50{background-color:rgb(248 250 252 / 0.5);}
+.bg-white{--un-bg-opacity:1;background-color:rgb(255 255 255 / var(--un-bg-opacity));}
+.bg-white\/10{background-color:rgb(255 255 255 / 0.1);}
+.bg-white\/60{background-color:rgb(255 255 255 / 0.6);}
+.bg-yellow-400{--un-bg-opacity:1;background-color:rgb(250 204 21 / var(--un-bg-opacity));}
+.bg-yellow-400\/80{background-color:rgb(250 204 21 / 0.8);}
+.hover\:bg-white\/20:hover{background-color:rgb(255 255 255 / 0.2);}
+.amp-dark-mode .dark\:from-primary-700{--un-gradient-from-position:0%;--un-gradient-from:rgb(3 105 161 / var(--un-from-opacity, 1)) var(--un-gradient-from-position);--un-gradient-to-position:100%;--un-gradient-to:rgb(3 105 161 / 0) var(--un-gradient-to-position);--un-gradient-stops:var(--un-gradient-from), var(--un-gradient-to);}
+.amp-dark-mode .dark\:from-primary-800{--un-gradient-from-position:0%;--un-gradient-from:rgb(7 89 133 / var(--un-from-opacity, 1)) var(--un-gradient-from-position);--un-gradient-to-position:100%;--un-gradient-to:rgb(7 89 133 / 0) var(--un-gradient-to-position);--un-gradient-stops:var(--un-gradient-from), var(--un-gradient-to);}
+.amp-dark-mode .dark\:from-primary-900\/40{--un-gradient-from-position:0%;--un-gradient-from:rgb(12 74 110 / 0.4) var(--un-gradient-from-position);--un-gradient-to-position:100%;--un-gradient-to:rgb(12 74 110 / 0) var(--un-gradient-to-position);--un-gradient-stops:var(--un-gradient-from), var(--un-gradient-to);}
+.amp-dark-mode .dark\:from-surface-950{--un-gradient-from-position:0%;--un-gradient-from:rgb(2 6 23 / var(--un-from-opacity, 1)) var(--un-gradient-from-position);--un-gradient-to-position:100%;--un-gradient-to:rgb(2 6 23 / 0) var(--un-gradient-to-position);--un-gradient-stops:var(--un-gradient-from), var(--un-gradient-to);}
+.from-primary-100{--un-gradient-from-position:0%;--un-gradient-from:rgb(224 242 254 / var(--un-from-opacity, 1)) var(--un-gradient-from-position);--un-gradient-to-position:100%;--un-gradient-to:rgb(224 242 254 / 0) var(--un-gradient-to-position);--un-gradient-stops:var(--un-gradient-from), var(--un-gradient-to);}
+.from-primary-200{--un-gradient-from-position:0%;--un-gradient-from:rgb(186 230 253 / var(--un-from-opacity, 1)) var(--un-gradient-from-position);--un-gradient-to-position:100%;--un-gradient-to:rgb(186 230 253 / 0) var(--un-gradient-to-position);--un-gradient-stops:var(--un-gradient-from), var(--un-gradient-to);}
+.from-primary-400{--un-gradient-from-position:0%;--un-gradient-from:rgb(56 189 248 / var(--un-from-opacity, 1)) var(--un-gradient-from-position);--un-gradient-to-position:100%;--un-gradient-to:rgb(56 189 248 / 0) var(--un-gradient-to-position);--un-gradient-stops:var(--un-gradient-from), var(--un-gradient-to);}
+.from-primary-500,
+.from-primary-600{--un-gradient-from-position:0%;--un-gradient-from:rgb(2 132 199 / var(--un-from-opacity, 1)) var(--un-gradient-from-position);--un-gradient-to-position:100%;--un-gradient-to:rgb(2 132 199 / 0) var(--un-gradient-to-position);--un-gradient-stops:var(--un-gradient-from), var(--un-gradient-to);}
+.from-surface-50{--un-gradient-from-position:0%;--un-gradient-from:rgb(248 250 252 / var(--un-from-opacity, 1)) var(--un-gradient-from-position);--un-gradient-to-position:100%;--un-gradient-to:rgb(248 250 252 / 0) var(--un-gradient-to-position);--un-gradient-stops:var(--un-gradient-from), var(--un-gradient-to);}
+.amp-dark-mode .dark\:via-primary-900{--un-gradient-via-position:50%;--un-gradient-to:rgb(12 74 110 / 0);--un-gradient-stops:var(--un-gradient-from), rgb(12 74 110 / var(--un-via-opacity, 1)) var(--un-gradient-via-position), var(--un-gradient-to);}
+.via-accent-200{--un-gradient-via-position:50%;--un-gradient-to:rgb(254 215 170 / 0);--un-gradient-stops:var(--un-gradient-from), rgb(254 215 170 / var(--un-via-opacity, 1)) var(--un-gradient-via-position), var(--un-gradient-to);}
+.via-accent-500{--un-gradient-via-position:50%;--un-gradient-to:rgb(249 115 22 / 0);--un-gradient-stops:var(--un-gradient-from), rgb(249 115 22 / var(--un-via-opacity, 1)) var(--un-gradient-via-position), var(--un-gradient-to);}
+.via-primary-700{--un-gradient-via-position:50%;--un-gradient-to:rgb(3 105 161 / 0);--un-gradient-stops:var(--un-gradient-from), rgb(3 105 161 / var(--un-via-opacity, 1)) var(--un-gradient-via-position), var(--un-gradient-to);}
+.amp-dark-mode .dark\:to-primary-800{--un-gradient-to-position:100%;--un-gradient-to:rgb(7 89 133 / var(--un-to-opacity, 1)) var(--un-gradient-to-position);}
+.amp-dark-mode .dark\:to-primary-900,
+.to-primary-900{--un-gradient-to-position:100%;--un-gradient-to:rgb(12 74 110 / var(--un-to-opacity, 1)) var(--un-gradient-to-position);}
+.amp-dark-mode .dark\:to-primary-900\/20{--un-gradient-to-position:100%;--un-gradient-to:rgb(12 74 110 / 0.2) var(--un-gradient-to-position);}
+.amp-dark-mode .dark\:to-surface-900{--un-gradient-to-position:100%;--un-gradient-to:rgb(15 23 42 / var(--un-to-opacity, 1)) var(--un-gradient-to-position);}
+.amp-dark-mode .dark\:to-surface-950{--un-gradient-to-position:100%;--un-gradient-to:rgb(2 6 23 / var(--un-to-opacity, 1)) var(--un-gradient-to-position);}
+.to-accent-400{--un-gradient-to-position:100%;--un-gradient-to:rgb(251 146 60 / var(--un-to-opacity, 1)) var(--un-gradient-to-position);}
+.to-accent-500{--un-gradient-to-position:100%;--un-gradient-to:rgb(249 115 22 / var(--un-to-opacity, 1)) var(--un-gradient-to-position);}
+.to-primary-200{--un-gradient-to-position:100%;--un-gradient-to:rgb(186 230 253 / var(--un-to-opacity, 1)) var(--un-gradient-to-position);}
+.to-primary-50{--un-gradient-to-position:100%;--un-gradient-to:rgb(240 249 255 / var(--un-to-opacity, 1)) var(--un-gradient-to-position);}
+.to-primary-500,
+.to-primary-600{--un-gradient-to-position:100%;--un-gradient-to:rgb(2 132 199 / var(--un-to-opacity, 1)) var(--un-gradient-to-position);}
+.to-primary-700{--un-gradient-to-position:100%;--un-gradient-to:rgb(3 105 161 / var(--un-to-opacity, 1)) var(--un-gradient-to-position);}
+.bg-gradient-to-br{--un-gradient-shape:to bottom right in oklch;--un-gradient:var(--un-gradient-shape), var(--un-gradient-stops);background-image:linear-gradient(var(--un-gradient));}
+.bg-gradient-to-r{--un-gradient-shape:to right in oklch;--un-gradient:var(--un-gradient-shape), var(--un-gradient-stops);background-image:linear-gradient(var(--un-gradient));}
+.bg-clip-text{-webkit-background-clip:text;background-clip:text;}
+.p-4{padding:1rem;}
+.p-5{padding:1.25rem;}
+.p-6{padding:1.5rem;}
+.px-3{padding-left:0.75rem;padding-right:0.75rem;}
+.px-4{padding-left:1rem;padding-right:1rem;}
+.px-5{padding-left:1.25rem;padding-right:1.25rem;}
+.px-6{padding-left:1.5rem;padding-right:1.5rem;}
+.px-8{padding-left:2rem;padding-right:2rem;}
+.py-1{padding-top:0.25rem;padding-bottom:0.25rem;}
+.py-1\.5{padding-top:0.375rem;padding-bottom:0.375rem;}
+.py-12{padding-top:3rem;padding-bottom:3rem;}
+.py-16{padding-top:4rem;padding-bottom:4rem;}
+.py-2{padding-top:0.5rem;padding-bottom:0.5rem;}
+.py-2\.5{padding-top:0.625rem;padding-bottom:0.625rem;}
+.py-20{padding-top:5rem;padding-bottom:5rem;}
+.py-24{padding-top:6rem;padding-bottom:6rem;}
+.py-3{padding-top:0.75rem;padding-bottom:0.75rem;}
+.py-3\.5{padding-top:0.875rem;padding-bottom:0.875rem;}
+.py-4{padding-top:1rem;padding-bottom:1rem;}
+.py-5{padding-top:1.25rem;padding-bottom:1.25rem;}
+.pb-4{padding-bottom:1rem;}
+.pb-5{padding-bottom:1.25rem;}
+.pt-8{padding-top:2rem;}
+.text-center{text-align:center;}
+.text-left{text-align:left;}
+.text-2xl{font-size:1.5rem;line-height:2rem;}
+.text-3xl{font-size:1.875rem;line-height:2.25rem;}
+.text-4xl{font-size:2.25rem;line-height:2.5rem;}
+.text-5xl{font-size:3rem;line-height:1;}
+.text-base{font-size:1rem;line-height:1.5rem;}
+.text-lg{font-size:1.125rem;line-height:1.75rem;}
+.text-sm{font-size:0.875rem;line-height:1.25rem;}
+.text-xl{font-size:1.25rem;line-height:1.75rem;}
+.text-xs{font-size:0.75rem;line-height:1rem;}
+.amp-dark-mode .dark\:text-accent-400{--un-text-opacity:1;color:rgb(251 146 60 / var(--un-text-opacity));}
+.amp-dark-mode .dark\:text-green-400{--un-text-opacity:1;color:rgb(74 222 128 / var(--un-text-opacity));}
+.amp-dark-mode .dark\:text-primary-300{--un-text-opacity:1;color:rgb(125 211 252 / var(--un-text-opacity));}
+.amp-dark-mode .dark\:text-primary-400{--un-text-opacity:1;color:rgb(56 189 248 / var(--un-text-opacity));}
+.amp-dark-mode .dark\:text-surface-100{--un-text-opacity:1;color:rgb(241 245 249 / var(--un-text-opacity));}
+.amp-dark-mode .dark\:text-surface-300{--un-text-opacity:1;color:rgb(203 213 225 / var(--un-text-opacity));}
+.amp-dark-mode .dark\:text-surface-400,
+.text-surface-400{--un-text-opacity:1;color:rgb(148 163 184 / var(--un-text-opacity));}
+.amp-dark-mode .dark\:text-surface-500,
+.text-surface-500{--un-text-opacity:1;color:rgb(100 116 139 / var(--un-text-opacity));}
+.amp-dark-mode .dark\:text-white,
+.text-white{--un-text-opacity:1;color:rgb(255 255 255 / var(--un-text-opacity));}
+.text-accent-600{--un-text-opacity:1;color:rgb(234 88 12 / var(--un-text-opacity));}
+.text-blue-500{--un-text-opacity:1;color:rgb(59 130 246 / var(--un-text-opacity));}
+.text-cyan-500{--un-text-opacity:1;color:rgb(6 182 212 / var(--un-text-opacity));}
+.text-green-500{--un-text-opacity:1;color:rgb(34 197 94 / var(--un-text-opacity));}
+.text-green-600{--un-text-opacity:1;color:rgb(22 163 74 / var(--un-text-opacity));}
+.text-orange-500{--un-text-opacity:1;color:rgb(249 115 22 / var(--un-text-opacity));}
+.text-pink-500{--un-text-opacity:1;color:rgb(236 72 153 / var(--un-text-opacity));}
+.text-primary-100{--un-text-opacity:1;color:rgb(224 242 254 / var(--un-text-opacity));}
+.text-primary-100\/80{color:rgb(224 242 254 / 0.8);}
+.text-primary-500,
+.text-primary-600{--un-text-opacity:1;color:rgb(2 132 199 / var(--un-text-opacity));}
+.text-primary-700{--un-text-opacity:1;color:rgb(3 105 161 / var(--un-text-opacity));}
+.text-purple-500{--un-text-opacity:1;color:rgb(168 85 247 / var(--un-text-opacity));}
+.text-surface-600{--un-text-opacity:1;color:rgb(71 85 105 / var(--un-text-opacity));}
+.text-surface-700{--un-text-opacity:1;color:rgb(51 65 85 / var(--un-text-opacity));}
+.text-surface-900{--un-text-opacity:1;color:rgb(15 23 42 / var(--un-text-opacity));}
+.text-transparent{color:transparent;}
+.amp-dark-mode .dark\:hover\:text-primary-400:hover{--un-text-opacity:1;color:rgb(56 189 248 / var(--un-text-opacity));}
+.hover\:text-primary-500:hover{--un-text-opacity:1;color:rgb(2 132 199 / var(--un-text-opacity));}
+.font-bold{font-weight:700;}
+.font-extrabold{font-weight:800;}
+.font-medium{font-weight:500;}
+.font-semibold{font-weight:600;}
+.leading-relaxed{line-height:1.625;}
+.leading-tight{line-height:1.25;}
+.tracking-\[0\.15em\]{letter-spacing:0.15em;}
+.tracking-\[0\.2em\]{letter-spacing:0.2em;}
+.tracking-tight{letter-spacing:-0.025em;}
+.tracking-wider{letter-spacing:0.05em;}
+.tracking-widest{letter-spacing:0.1em;}
+.font-mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;}
+.uppercase{text-transform:uppercase;}
+.italic{font-style:italic;}
+.tabular-nums{--un-numeric-spacing:tabular-nums;font-variant-numeric:var(--un-ordinal) var(--un-slashed-zero) var(--un-numeric-figure) var(--un-numeric-spacing) var(--un-numeric-fraction);}
+.no-underline{text-decoration:none;}
+.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
+.amp-dark-mode .dark\:opacity-30{opacity:0.3;}
+.opacity-40{opacity:0.4;}
+.opacity-50{opacity:0.5;}
+.shadow-lg{--un-shadow:var(--un-shadow-inset) 0 10px 15px -3px var(--un-shadow-color, rgb(0 0 0 / 0.1)),var(--un-shadow-inset) 0 4px 6px -4px var(--un-shadow-color, rgb(0 0 0 / 0.1));box-shadow:var(--un-ring-offset-shadow), var(--un-ring-shadow), var(--un-shadow);}
+.shadow-primary-500\/20{--un-shadow-color:rgb(2 132 199 / 0.2);}
+.shadow-primary-500\/25{--un-shadow-color:rgb(2 132 199 / 0.25);}
+.ring-2{--un-ring-width:2px;--un-ring-offset-shadow:var(--un-ring-inset) 0 0 0 var(--un-ring-offset-width) var(--un-ring-offset-color);--un-ring-shadow:var(--un-ring-inset) 0 0 0 calc(var(--un-ring-width) + var(--un-ring-offset-width)) var(--un-ring-color);box-shadow:var(--un-ring-offset-shadow), var(--un-ring-shadow), var(--un-shadow);}
+.ring-primary-500{--un-ring-opacity:1;--un-ring-color:rgb(2 132 199 / var(--un-ring-opacity));}
+.ring-primary-500\/50{--un-ring-color:rgb(2 132 199 / 0.5);}
+.backdrop-blur-sm{--un-backdrop-blur:blur(4px);-webkit-backdrop-filter:var(--un-backdrop-blur) var(--un-backdrop-brightness) var(--un-backdrop-contrast) var(--un-backdrop-grayscale) var(--un-backdrop-hue-rotate) var(--un-backdrop-invert) var(--un-backdrop-opacity) var(--un-backdrop-saturate) var(--un-backdrop-sepia);backdrop-filter:var(--un-backdrop-blur) var(--un-backdrop-brightness) var(--un-backdrop-contrast) var(--un-backdrop-grayscale) var(--un-backdrop-hue-rotate) var(--un-backdrop-invert) var(--un-backdrop-opacity) var(--un-backdrop-saturate) var(--un-backdrop-sepia);}
+.blur-3xl{--un-blur:blur(64px);filter:var(--un-blur) var(--un-brightness) var(--un-contrast) var(--un-drop-shadow) var(--un-grayscale) var(--un-hue-rotate) var(--un-invert) var(--un-saturate) var(--un-sepia);}
+.transition{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms;}
+.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms;}
+.transition-colors{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms;}
+.duration-200{transition-duration:200ms;}
+.ease,
+.ease-in-out{transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);}
+@media (min-width: 640px){
+.sm\:inline-flex{display:inline-flex;}
+.sm\:flex-row{flex-direction:row;}
+.sm\:text-4xl{font-size:2.25rem;line-height:2.5rem;}
+}
+@media (min-width: 768px){
+.md\:col-span-1{grid-column:span 1/span 1;}
+.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr));}
+.md\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr));}
+.md\:grid-cols-4{grid-template-columns:repeat(4,minmax(0,1fr));}
+.md\:grid-cols-5{grid-template-columns:repeat(5,minmax(0,1fr));}
+.md\:-mt-4{margin-top:-1rem;}
+.md\:mb-4{margin-bottom:1rem;}
+.md\:block{display:block;}
+}
+@media (min-width: 1024px){
+.lg\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr));}
+.lg\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr));}
+.lg\:text-5xl{font-size:3rem;line-height:1;}
+}</style><style type="text/css">/* Smooth scroll */
+html { scroll-behavior: smooth; }
+
+/* Gradient text animation */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.animated-gradient-text {
+  background-size: 200% 200%;
+  animation: gradientShift 6s ease infinite;
+}
+
+/* Floating orbs */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-18px) rotate(4deg); }
+  66% { transform: translateY(10px) rotate(-2deg); }
+}
+.orb { animation: float 8s ease-in-out infinite; }
+.orb-delay-1 { animation-delay: -2s; }
+.orb-delay-2 { animation-delay: -4s; }
+
+/* Fade-in on scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Code editor glow */
+.code-glow {
+  box-shadow: 0 0 40px -10px rgba(2, 132, 199, 0.3),
+              0 0 80px -20px rgba(249, 115, 22, 0.15);
+}
+
+/* Pricing card highlight */
+.pricing-highlight {
+  position: relative;
+}
+.pricing-highlight::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 1rem;
+  background: linear-gradient(135deg, #0284c7, #f97316);
+  z-index: -1;
+  padding: 2px;
+  background-clip: padding-box;
+}
+
+/* Stat counter */
+.stat-number {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Details/summary styling */
+details.card > summary {
+  list-style: none;
+}
+details.card > summary::-webkit-details-marker {
+  display: none;
+}
+details.card[open] > summary .faq-chevron {
+  transform: rotate(90deg);
+}
+.faq-chevron {
+  transition: transform 0.3s ease;
+}
+
+/* Grid pattern background */
+.grid-pattern {
+  background-image:
+    linear-gradient(rgba(2, 132, 199, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(2, 132, 199, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+.amp-dark-mode .grid-pattern {
+  background-image:
+    linear-gradient(rgba(2, 132, 199, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(2, 132, 199, 0.06) 1px, transparent 1px);
+}
+
+/* Testimonial card */
+.testimonial-card {
+  position: relative;
+}
+.testimonial-card::before {
+  content: '\201C';
+  position: absolute;
+  top: -10px;
+  left: 16px;
+  font-size: 4rem;
+  line-height: 1;
+  color: #0284c7;
+  opacity: 0.15;
+  font-family: Georgia, serif;
+}
+</style><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "JSON LD Visual Editor",
+  "applicationCategory": "DeveloperApplication",
+  "operatingSystem": "Web",
+  "description": "Visual editor for building, validating, and exporting JSON-LD structured data.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "ratingCount": "1250"
+  }
+}</script></head><body class="bg-surface-50 dark:bg-surface-950 text-surface-900 dark:text-surface-100 min-h-screen antialiased"><header class="navbar"><div class="nav-container"><div class="nav-left"><a class="logo" href="#"><div class="logo-box bg-gradient-to-br from-primary-500 to-accent-500"><span class="i-carbon-semantic-web text-white text-lg"/></div><span class="logo-text">JSON LD Editor</span></a></div><nav class="desktop-links"><a class="nav-item" href="#features">Features</a><a class="nav-item" href="#how-it-works">How It Works</a><a class="nav-item" href="#pricing">Pricing</a><a class="nav-item" href="#faq">FAQ</a><a class="nav-item" href="#">Docs</a></nav><div class="actions-group"><button class="icon-btn" id="dark-mode-toggle" type="button"><span class="i-carbon-moon text-lg"/></button><a class="btn-ghost hidden sm:inline-flex" href="#">Sign In</a><a class="btn-primary hidden sm:inline-flex" href="#">Get Started</a></div></div></header><main><section class="hero grid-pattern"><div class="absolute inset-0 overflow-hidden pointer-events-none"><div class="orb absolute top-[15%] left-[10%] w-72 h-72 bg-primary-400/10 dark:bg-primary-500/5 rounded-full blur-3xl"/><div class="orb orb-delay-1 absolute top-[60%] right-[10%] w-96 h-96 bg-accent-400/10 dark:bg-accent-500/5 rounded-full blur-3xl"/><div class="orb orb-delay-2 absolute bottom-[10%] left-[30%] w-64 h-64 bg-primary-300/10 dark:bg-primary-600/5 rounded-full blur-3xl"/></div><div class="relative z-10 max-w-5xl mx-auto flex flex-col items-center gap-10"><div class="inline-flex items-center gap-2.5 bg-primary-50 dark:bg-primary-900/30 border border-primary-200/50 dark:border-primary-800/30 text-primary-700 dark:text-primary-300 text-xs font-bold uppercase tracking-[0.15em] px-5 py-2 rounded-full"><span class="i-carbon-semantic-web"/>JSON-LD Made Visual<span class="ml-1 w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"/></div><h1 class="hero-title">Structure Your Data. <span class="bg-gradient-to-r from-primary-500 via-accent-500 to-primary-500 bg-clip-text text-transparent animated-gradient-text">Visually.</span><br/>Ship Perfect JSON-LD.</h1><p class="hero-subtitle">The first visual editor that lets you build, validate, and export JSON-LD structured data without writing a single line of code. Drag, connect, and publish &#x2014; your search engines will thank you.</p><div class="flex flex-wrap items-center justify-center gap-4 mt-2"><a class="btn-primary text-lg px-8 py-3.5" href="#"><span class="i-carbon-play"/>Start Editing Free</a><a class="btn-secondary text-lg px-8 py-3.5" href="#demo"><span class="i-carbon-eye"/>Watch Demo</a></div><p class="text-sm text-surface-500 dark:text-surface-500 mt-2">No credit card required &#xB7; Free forever plan &#xB7; Setup in 30 seconds</p><div class="card w-full max-w-3xl mt-8 code-glow"><div class="flex items-center justify-between px-5 py-3 bg-surface-100/80 dark:bg-surface-800/80 border-b border-surface-200/60 dark:border-surface-700/60"><div class="flex items-center gap-2.5"><span class="w-3 h-3 rounded-full bg-red-400/80"/><span class="w-3 h-3 rounded-full bg-yellow-400/80"/><span class="w-3 h-3 rounded-full bg-green-400/80"/></div><span class="text-xs text-surface-500 dark:text-surface-400 font-mono">article.jsonld</span></div><pre class="p-6 text-sm font-mono text-surface-700 dark:text-surface-300 overflow-x-auto text-left leading-relaxed"><span style="color:#7dd3fc">{</span>
+  <span style="color:#34d399">"@context"</span>: <span style="color:#fbbf24">"https://schema.org"</span>,
+  <span style="color:#34d399">"@type"</span>: <span style="color:#fbbf24">"Article"</span>,
+  <span style="color:#34d399">"headline"</span>: <span style="color:#fbbf24">"My Blog Post"</span>,
+  <span style="color:#34d399">"author"</span>: <span style="color:#7dd3fc">{</span>
+    <span style="color:#34d399">"@type"</span>: <span style="color:#fbbf24">"Person"</span>,
+    <span style="color:#34d399">"name"</span>: <span style="color:#fbbf24">"John Doe"</span>
+  <span style="color:#7dd3fc">}</span>,
+  <span style="color:#34d399">"datePublished"</span>: <span style="color:#fbbf24">"2024-01-15"</span>,
+  <span style="color:#34d399">"publisher"</span>: <span style="color:#7dd3fc">{</span>
+    <span style="color:#34d399">"@type"</span>: <span style="color:#fbbf24">"Organization"</span>,
+    <span style="color:#34d399">"name"</span>: <span style="color:#fbbf24">"JSON LD Editor"</span>
+  <span style="color:#7dd3fc">}</span>
+<span style="color:#7dd3fc">}</span></pre></div></div></section><section class="py-12 bg-white/60 dark:bg-surface-900/60 backdrop-blur-sm border-y border-surface-200/50 dark:border-surface-800/50"><div class="section-container"><div class="grid grid-cols-2 md:grid-cols-4 gap-8"><div class="flex flex-col items-center gap-2 reveal"><span class="i-carbon-library text-2xl text-primary-500"/><span class="stat-number text-3xl font-extrabold text-surface-900 dark:text-white">50+</span><span class="text-sm text-surface-500 dark:text-surface-400 font-medium">Schema Templates</span></div><div class="flex flex-col items-center gap-2 reveal"><span class="i-carbon-document text-2xl text-primary-500"/><span class="stat-number text-3xl font-extrabold text-surface-900 dark:text-white">10K+</span><span class="text-sm text-surface-500 dark:text-surface-400 font-medium">JSON-LD Files Created</span></div><div class="flex flex-col items-center gap-2 reveal"><span class="i-carbon-checkmark-outline text-2xl text-primary-500"/><span class="stat-number text-3xl font-extrabold text-surface-900 dark:text-white">99.9%</span><span class="text-sm text-surface-500 dark:text-surface-400 font-medium">Validation Accuracy</span></div><div class="flex flex-col items-center gap-2 reveal"><span class="i-carbon-favorite text-2xl text-primary-500"/><span class="stat-number text-3xl font-extrabold text-surface-900 dark:text-white">4.9&#x2605;</span><span class="text-sm text-surface-500 dark:text-surface-400 font-medium">User Rating</span></div></div></div></section><section class="py-16 bg-surface-50/50 dark:bg-surface-950/50"><div class="section-container flex flex-col items-center gap-8 reveal"><p class="text-xs font-bold text-surface-400 dark:text-surface-500 uppercase tracking-[0.2em]">Trusted by teams building for the web</p><div class="flex flex-wrap items-center justify-center gap-x-12 gap-y-6 opacity-40 dark:opacity-30"><span class="text-xl font-extrabold text-surface-500 dark:text-surface-400 tracking-tight">Google</span><span class="text-xl font-extrabold text-surface-500 dark:text-surface-400 tracking-tight">Shopify</span><span class="text-xl font-extrabold text-surface-500 dark:text-surface-400 tracking-tight">WordPress</span><span class="text-xl font-extrabold text-surface-500 dark:text-surface-400 tracking-tight">Stripe</span><span class="text-xl font-extrabold text-surface-500 dark:text-surface-400 tracking-tight">Vercel</span><span class="text-xl font-extrabold text-surface-500 dark:text-surface-400 tracking-tight">Medium</span></div></div></section><div id="features"><section class="py-24 bg-surface-50/50 dark:bg-surface-950/50 grid-pattern"><div class="section-container"><div class="section-header reveal"><span class="section-badge"><span class="i-carbon-features"/>Features</span><h2 class="section-title">Everything you need for
+structured data</h2><p class="section-desc">From visual node editing to real-time validation, every tool you need to create perfect JSON-LD is right here.</p></div><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"><div class="card card-body reveal"><div class="bg-blue-50 dark:bg-blue-950/40 w-14 h-14 rounded-2xl flex items-center justify-center text-blue-500 text-2xl"><span class="i-carbon-flow-branch"/></div><h3 class="text-lg font-bold text-surface-900 dark:text-white">Visual Node Editor</h3><p class="text-surface-600 dark:text-surface-400 leading-relaxed text-sm">Drag and drop nodes to build your JSON-LD graph. Connect entities, add properties, and see your structure come alive in real-time.</p></div><div class="card card-body reveal"><div class="bg-green-50 dark:bg-green-950/40 w-14 h-14 rounded-2xl flex items-center justify-center text-green-500 text-2xl"><span class="i-carbon-checkmark-outline"/></div><h3 class="text-lg font-bold text-surface-900 dark:text-white">Real-Time Validation</h3><p class="text-surface-600 dark:text-surface-400 leading-relaxed text-sm">Instantly validate against Schema.org types. Catch errors before they hit production with inline hints and rich error messages.</p></div><div class="card card-body reveal"><div class="bg-orange-50 dark:bg-orange-950/40 w-14 h-14 rounded-2xl flex items-center justify-center text-orange-500 text-2xl"><span class="i-carbon-export"/></div><h3 class="text-lg font-bold text-surface-900 dark:text-white">One-Click Export</h3><p class="text-surface-600 dark:text-surface-400 leading-relaxed text-sm">Export clean, minified JSON-LD ready to embed in your HTML. Supports script tag wrapping and CDN deployment.</p></div><div class="card card-body reveal"><div class="bg-purple-50 dark:bg-purple-950/40 w-14 h-14 rounded-2xl flex items-center justify-center text-purple-500 text-2xl"><span class="i-carbon-library"/></div><h3 class="text-lg font-bold text-surface-900 dark:text-white">Schema Templates</h3><p class="text-surface-600 dark:text-surface-400 leading-relaxed text-sm">Start from 50+ pre-built templates: Article, Product, Recipe, Event, FAQ, Organization, and every major Schema.org type.</p></div><div class="card card-body reveal"><div class="bg-pink-50 dark:bg-pink-950/40 w-14 h-14 rounded-2xl flex items-center justify-center text-pink-500 text-2xl"><span class="i-carbon-git-pull-request"/></div><h3 class="text-lg font-bold text-surface-900 dark:text-white">Version History</h3><p class="text-surface-600 dark:text-surface-400 leading-relaxed text-sm">Track every change with built-in version control. Revert, compare, and collaborate with your team on structured data.</p></div><div class="card card-body reveal"><div class="bg-cyan-50 dark:bg-cyan-950/40 w-14 h-14 rounded-2xl flex items-center justify-center text-cyan-500 text-2xl"><span class="i-carbon-search"/></div><h3 class="text-lg font-bold text-surface-900 dark:text-white">Rich Results Preview</h3><p class="text-surface-600 dark:text-surface-400 leading-relaxed text-sm">See exactly how Google will render your data with a live rich results preview &#x2014; no need to wait for indexing.</p></div></div></div></section></div><div id="how-it-works"><section class="py-24 bg-white dark:bg-surface-900"><div class="section-container"><div class="section-header reveal"><span class="section-badge"><span class="i-carbon-process"/>How It Works</span><h2 class="section-title">Three steps to perfect
+structured data</h2><p class="section-desc">From blank canvas to production-ready JSON-LD in minutes.</p></div><div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto relative"><div class="hidden md:block absolute top-10 left-[16%] right-[16%] h-0.5 bg-gradient-to-r from-primary-200 via-accent-200 to-primary-200 dark:from-primary-800 dark:via-accent-800 dark:to-primary-800"/><div class="flex flex-col items-center text-center gap-4 reveal relative z-10"><div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-primary-500 to-primary-600 text-white text-2xl font-extrabold flex items-center justify-center shadow-lg shadow-primary-500/25">01</div><h3 class="text-xl font-bold text-surface-900 dark:text-white">Choose a Template</h3><p class="text-surface-600 dark:text-surface-400 leading-relaxed">Pick from our library of Schema.org templates or start from scratch with a blank canvas.</p></div><div class="flex flex-col items-center text-center gap-4 reveal relative z-10"><div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-primary-500 to-primary-600 text-white text-2xl font-extrabold flex items-center justify-center shadow-lg shadow-primary-500/25">02</div><h3 class="text-xl font-bold text-surface-900 dark:text-white">Build Visually</h3><p class="text-surface-600 dark:text-surface-400 leading-relaxed">Drag nodes, connect relationships, and fill in properties using our intuitive visual editor.</p></div><div class="flex flex-col items-center text-center gap-4 reveal relative z-10"><div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-primary-500 to-primary-600 text-white text-2xl font-extrabold flex items-center justify-center shadow-lg shadow-primary-500/25">03</div><h3 class="text-xl font-bold text-surface-900 dark:text-white">Validate &amp; Export</h3><p class="text-surface-600 dark:text-surface-400 leading-relaxed">Validate in real-time, preview rich results, and export production-ready JSON-LD.</p></div></div></div></section></div><section class="py-24 bg-surface-50/50 dark:bg-surface-950/50"><div class="section-container"><div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"><div class="flex flex-col gap-6 reveal"><span class="section-badge"><span class="i-carbon-compare"/>Why Visual?</span><h2 class="text-3xl sm:text-4xl font-extrabold text-surface-900 dark:text-white leading-tight">Stop wrestling with
+JSON syntax</h2><p class="text-lg text-surface-600 dark:text-surface-400 leading-relaxed">JSON-LD is powerful, but editing raw JSON is error-prone and time-consuming. Our visual editor lets you focus on the structure and relationships, not curly braces and commas.</p><div class="flex flex-col gap-4 mt-2"><div class="flex items-start gap-3"><div class="w-6 h-6 rounded-lg bg-green-100 dark:bg-green-900/30 flex items-center justify-center flex-shrink-0 mt-0.5"><span class="i-carbon-checkmark text-green-600 dark:text-green-400 text-sm"/></div><span class="text-surface-700 dark:text-surface-300 leading-relaxed">No more syntax errors or missing commas</span></div><div class="flex items-start gap-3"><div class="w-6 h-6 rounded-lg bg-green-100 dark:bg-green-900/30 flex items-center justify-center flex-shrink-0 mt-0.5"><span class="i-carbon-checkmark text-green-600 dark:text-green-400 text-sm"/></div><span class="text-surface-700 dark:text-surface-300 leading-relaxed">See your data graph at a glance</span></div><div class="flex items-start gap-3"><div class="w-6 h-6 rounded-lg bg-green-100 dark:bg-green-900/30 flex items-center justify-center flex-shrink-0 mt-0.5"><span class="i-carbon-checkmark text-green-600 dark:text-green-400 text-sm"/></div><span class="text-surface-700 dark:text-surface-300 leading-relaxed">Auto-complete for Schema.org properties</span></div><div class="flex items-start gap-3"><div class="w-6 h-6 rounded-lg bg-green-100 dark:bg-green-900/30 flex items-center justify-center flex-shrink-0 mt-0.5"><span class="i-carbon-checkmark text-green-600 dark:text-green-400 text-sm"/></div><span class="text-surface-700 dark:text-surface-300 leading-relaxed">Instant validation against official schemas</span></div></div></div><div class="card overflow-hidden reveal"><div class="flex border-b border-surface-200/60 dark:border-surface-700/60"><div class="flex-1 px-5 py-4 text-sm font-semibold text-surface-400 dark:text-surface-500 flex items-center gap-2"><span class="i-carbon-close-outline"/>Raw JSON</div><div class="flex-1 px-5 py-4 text-sm font-bold text-primary-500 bg-primary-50/50 dark:bg-primary-900/20 flex items-center gap-2"><span class="i-carbon-checkmark"/>Visual Editor</div></div><div class="grid grid-cols-2 divide-x divide-surface-200/60 dark:divide-surface-700/60"><pre class="p-5 text-xs font-mono text-surface-400 dark:text-surface-500 overflow-hidden leading-relaxed">{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "My Blog Post",
+  "author": {
+    "@type": "Person",
+    "name": "John Doe"
+  },
+  "datePublished": "2024-01-15"
+}</pre><div class="p-5 flex flex-col gap-3"><div class="bg-gradient-to-r from-primary-100 to-primary-50 dark:from-primary-900/40 dark:to-primary-900/20 text-primary-700 dark:text-primary-300 text-xs font-bold px-4 py-2.5 rounded-xl flex items-center gap-2"><span class="i-carbon-application"/>Schema.org/Article</div><div class="ml-3 flex flex-col gap-2 text-xs text-surface-600 dark:text-surface-400"><div class="flex items-center gap-2.5 bg-surface-50 dark:bg-surface-800/50 px-3 py-2 rounded-lg"><span class="font-semibold text-primary-600 dark:text-primary-400 min-w-[90px]">headline</span><span class="w-1 h-1 rounded-full bg-surface-300 dark:bg-surface-600"/>My Blog Post</div><div class="flex items-center gap-2.5 bg-surface-50 dark:bg-surface-800/50 px-3 py-2 rounded-lg"><span class="font-semibold text-primary-600 dark:text-primary-400 min-w-[90px]">author</span><span class="w-1 h-1 rounded-full bg-surface-300 dark:bg-surface-600"/>John Doe</div><div class="flex items-center gap-2.5 bg-surface-50 dark:bg-surface-800/50 px-3 py-2 rounded-lg"><span class="font-semibold text-primary-600 dark:text-primary-400 min-w-[90px]">datePublished</span><span class="w-1 h-1 rounded-full bg-surface-300 dark:bg-surface-600"/>2024-01-15</div></div></div></div></div></div></div></section><section class="py-24 bg-white dark:bg-surface-900"><div class="section-container"><div class="section-header reveal"><span class="section-badge"><span class="i-carbon-favorite"/>Testimonials</span><h2 class="section-title">Loved by developers
+and marketers alike</h2></div><div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto"><div class="card card-body testimonial-card reveal"><p class="text-surface-700 dark:text-surface-300 leading-relaxed italic text-sm">&quot;This tool saved me hours of debugging JSON-LD syntax errors. The visual editor is incredibly intuitive.&quot;</p><div class="flex items-center gap-3 mt-2"><div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary-400 to-accent-400 flex items-center justify-center text-white text-sm font-bold">SC</div><div class="flex flex-col"><span class="text-sm font-bold text-surface-900 dark:text-white">Sarah Chen</span><span class="text-xs text-surface-500 dark:text-surface-400">SEO Lead, TechCorp</span></div></div></div><div class="card card-body testimonial-card reveal"><p class="text-surface-700 dark:text-surface-300 leading-relaxed italic text-sm">&quot;We switched our entire team to JSON LD Editor. Our rich results coverage went from 40% to 95% in one month.&quot;</p><div class="flex items-center gap-3 mt-2"><div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary-400 to-accent-400 flex items-center justify-center text-white text-sm font-bold">MR</div><div class="flex flex-col"><span class="text-sm font-bold text-surface-900 dark:text-white">Marcus Rivera</span><span class="text-xs text-surface-500 dark:text-surface-400">Head of Content, MediaHub</span></div></div></div><div class="card card-body testimonial-card reveal"><p class="text-surface-700 dark:text-surface-300 leading-relaxed italic text-sm">&quot;The real-time validation alone is worth it. I catch errors before they ever reach production.&quot;</p><div class="flex items-center gap-3 mt-2"><div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary-400 to-accent-400 flex items-center justify-center text-white text-sm font-bold">AP</div><div class="flex flex-col"><span class="text-sm font-bold text-surface-900 dark:text-white">Aisha Patel</span><span class="text-xs text-surface-500 dark:text-surface-400">Frontend Developer, StartupXYZ</span></div></div></div></div></div></section><div id="pricing"><section class="py-24 bg-surface-50/50 dark:bg-surface-950/50 grid-pattern"><div class="section-container"><div class="section-header reveal"><span class="section-badge"><span class="i-carbon-price-tag"/>Pricing</span><h2 class="section-title">Simple, transparent pricing</h2><p class="section-desc">Start free. Upgrade when you need more power.</p></div><div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto items-start"><div class="card card-body "><h3 class="text-base font-bold text-surface-900 dark:text-white">Free</h3><div class="flex items-baseline gap-1.5"><span class="text-5xl font-extrabold text-surface-900 dark:text-white tracking-tight">$0</span><span class="text-base text-surface-500 dark:text-surface-400">forever</span></div><p class="text-sm text-surface-500 dark:text-surface-400">For personal projects and learning</p><hr class="border-surface-200/60 dark:border-surface-700/60"/><ul class="flex flex-col gap-3"><li class="flex items-center gap-3 text-sm text-surface-700 dark:text-surface-300"><div class="w-5 h-5 rounded-md bg-green-100 dark:bg-green-900/30 flex items-center justify-center flex-shrink-0"><span class="i-carbon-checkmark text-green-600 dark:text-green-400 text-xs"/></div>3 active projects</li><li class="flex items-center gap-3 text-sm text-surface-700 dark:text-surface-300"><div class="w-5 h-5 rounded-md bg-green-100 dark:bg-green-900/30 flex items-center justify-center flex-shrink-0"><span class="i-carbon-checkmark text-green-600 dark:text-green-400 text-xs"/></div>Basic templates</li><li class="flex items-center gap-3 text-sm text-surface-700 dark:text-surface-300"><div class="w-5 h-5 rounded-md bg-green-100 dark:bg-green-900/30 flex items-center justify-center flex-shrink-0"><span class="i-carbon-checkmark text-green-600 dark:text-green-400 text-xs"/></div>JSON-LD export</li><li class="flex items-center gap-3 text-sm text-surface-700 dark:text-surface-300"><div class="w-5 h-5 rounded-md bg-green-100 dark:bg-green-900/30 flex items-center justify-center flex-shrink-0"><span class="i-carbon-checkmark text-green-600 dark:text-green-400 text-xs"/></div>Community support</li></ul><a class="btn-secondary w-full text-center mt-2" href="#">Get Started</a></div><div class="card card-body md:-mt-4 md:mb-4 ring-2 ring-primary-500/50 relative"><div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-primary-500 to-accent-500 text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-lg shadow-primary-500/25">Most Popular</div><h3 class="text-base font-bold text-surface-900 dark:text-white">Pro</h3><div class="flex items-baseline gap-1.5"><span class="text-5xl font-extrabold text-surface-900 dark:text-white tracking-tight">$12</span><span class="text-base text-surface-500 dark:text-surface-400">/month</span></div><p class="text-sm text-surface-500 dark:text-surface-400">For professionals and small teams</p><hr class="border-surface-200/60 dark:border-surface-700/60"/><ul class="flex flex-col gap-3"><li class="flex items-center gap-3 text-sm text-surface-700 dark:text-surface-300"><div class="w-5 h-5 rounded-md bg-green-100 dark:bg-green-900/30 flex items-center justify-center flex-shrink-0"><span class="i-carbon-checkmark text-green-600 dark:text-green-400 text-xs"/></div>Unlimited projects</li><li class="flex items-center gap-3 text-sm text-surface-700 dark:text-surface-300"><div class="w-5 h-5 rounded-md bg-green-100 dark:bg-green-900/30 flex items-center justify-center flex-shrink-0"><span class="i-carbon-checkmark text-green-600 dark:text-green-400 text-xs"/></div>All 50+ templates</li><li class="flex items-center gap-3 text-sm text-surface-700 dark:text-surface-300"><div class="w-5 h-5 rounded-md bg-green-100 dark:bg-green-900/30 flex items-center justify-center flex-shrink-0"><span class="i-carbon-checkmark text-green-600 dark:text-green-400 text-xs"/></div>Rich results preview</li><li class="flex items-center gap-3 text-sm text-surface-700 dark:text-surface-300"><div class="w-5 h-5 rounded-md bg-green-100 dark:bg-green-900/30 flex items-center justify-center flex-shrink-0"><span class="i-carbon-checkmark text-green-600 dark:text-green-400 text-xs"/></div>Version history</li><li class="flex items-center gap-3 text-sm text-surface-700 dark:text-surface-300"><div class="w-5 h-5 rounded-md bg-green-100 dark:bg-green-900/30 flex items-center justify-center flex-shrink-0"><span class="i-carbon-checkmark text-green-600 dark:text-green-400 text-xs"/></div>Priority support</li></ul><a class="btn-primary w-full text-center mt-2" href="#">Start Free Trial</a></div><div class="card card-body "><h3 class="text-base font-bold text-surface-900 dark:text-white">Team</h3><div class="flex items-baseline gap-1.5"><span class="text-5xl font-extrabold text-surface-900 dark:text-white tracking-tight">$29</span><span class="text-base text-surface-500 dark:text-surface-400">/month</span></div><p class="text-sm text-surface-500 dark:text-surface-400">For agencies and large teams</p><hr class="border-surface-200/60 dark:border-surface-700/60"/><ul class="flex flex-col gap-3"><li class="flex items-center gap-3 text-sm text-surface-700 dark:text-surface-300"><div class="w-5 h-5 rounded-md bg-green-100 dark:bg-green-900/30 flex items-center justify-center flex-shrink-0"><span class="i-carbon-checkmark text-green-600 dark:text-green-400 text-xs"/></div>Everything in Pro</li><li class="flex items-center gap-3 text-sm text-surface-700 dark:text-surface-300"><div class="w-5 h-5 rounded-md bg-green-100 dark:bg-green-900/30 flex items-center justify-center flex-shrink-0"><span class="i-carbon-checkmark text-green-600 dark:text-green-400 text-xs"/></div>Team collaboration</li><li class="flex items-center gap-3 text-sm text-surface-700 dark:text-surface-300"><div class="w-5 h-5 rounded-md bg-green-100 dark:bg-green-900/30 flex items-center justify-center flex-shrink-0"><span class="i-carbon-checkmark text-green-600 dark:text-green-400 text-xs"/></div>Custom templates</li><li class="flex items-center gap-3 text-sm text-surface-700 dark:text-surface-300"><div class="w-5 h-5 rounded-md bg-green-100 dark:bg-green-900/30 flex items-center justify-center flex-shrink-0"><span class="i-carbon-checkmark text-green-600 dark:text-green-400 text-xs"/></div>API access</li><li class="flex items-center gap-3 text-sm text-surface-700 dark:text-surface-300"><div class="w-5 h-5 rounded-md bg-green-100 dark:bg-green-900/30 flex items-center justify-center flex-shrink-0"><span class="i-carbon-checkmark text-green-600 dark:text-green-400 text-xs"/></div>SSO &amp; admin controls</li></ul><a class="btn-secondary w-full text-center mt-2" href="#">Contact Sales</a></div></div></div></section></div><div id="faq"><section class="py-24 bg-white dark:bg-surface-900"><div class="section-container max-w-3xl"><div class="section-header reveal"><span class="section-badge"><span class="i-carbon-question"/>FAQ</span><h2 class="section-title">Frequently asked questions</h2><p class="section-desc">Everything you need to know about JSON LD Visual Editor.</p></div><div class="flex flex-col gap-3"><details class="card reveal"><summary class="px-6 py-5 cursor-pointer font-semibold text-surface-900 dark:text-white hover:text-primary-500 transition-colors flex items-center justify-between gap-4">What is JSON-LD?<span class="i-carbon-chevron-right faq-chevron text-surface-400 flex-shrink-0"/></summary><div class="px-6 pb-5 text-surface-600 dark:text-surface-400 leading-relaxed">JSON-LD (JavaScript Object Notation for Linked Data) is a way to add structured data to your web pages. Search engines like Google use it to understand your content and display rich results in search.</div></details><details class="card reveal"><summary class="px-6 py-5 cursor-pointer font-semibold text-surface-900 dark:text-white hover:text-primary-500 transition-colors flex items-center justify-between gap-4">Do I need coding skills?<span class="i-carbon-chevron-right faq-chevron text-surface-400 flex-shrink-0"/></summary><div class="px-6 pb-5 text-surface-600 dark:text-surface-400 leading-relaxed">No! That&apos;s the whole point. Our visual editor lets you build JSON-LD using drag-and-drop nodes and forms &#x2014; no coding required.</div></details><details class="card reveal"><summary class="px-6 py-5 cursor-pointer font-semibold text-surface-900 dark:text-white hover:text-primary-500 transition-colors flex items-center justify-between gap-4">Can I use this with any website?<span class="i-carbon-chevron-right faq-chevron text-surface-400 flex-shrink-0"/></summary><div class="px-6 pb-5 text-surface-600 dark:text-surface-400 leading-relaxed">Yes! JSON-LD is universal. Export your structured data and embed it in any website &#x2014; WordPress, Shopify, custom HTML, or any framework.</div></details><details class="card reveal"><summary class="px-6 py-5 cursor-pointer font-semibold text-surface-900 dark:text-white hover:text-primary-500 transition-colors flex items-center justify-between gap-4">Is my data safe?<span class="i-carbon-chevron-right faq-chevron text-surface-400 flex-shrink-0"/></summary><div class="px-6 pb-5 text-surface-600 dark:text-surface-400 leading-relaxed">Absolutely. Your projects are encrypted and stored securely. We never share or sell your data. You can export and back up your work anytime.</div></details><details class="card reveal"><summary class="px-6 py-5 cursor-pointer font-semibold text-surface-900 dark:text-white hover:text-primary-500 transition-colors flex items-center justify-between gap-4">Do you offer a free plan?<span class="i-carbon-chevron-right faq-chevron text-surface-400 flex-shrink-0"/></summary><div class="px-6 pb-5 text-surface-600 dark:text-surface-400 leading-relaxed">Yes! Our free plan includes 3 active projects and basic templates &#x2014; perfect for personal projects and learning.</div></details></div></div></section></div><section class="py-24 bg-gradient-to-br from-primary-600 via-primary-700 to-primary-900 dark:from-primary-800 dark:via-primary-900 dark:to-surface-950 relative overflow-hidden"><div class="absolute inset-0 overflow-hidden pointer-events-none"><div class="absolute -top-24 -right-24 w-96 h-96 bg-accent-500/10 rounded-full blur-3xl"/><div class="absolute -bottom-24 -left-24 w-96 h-96 bg-primary-400/10 rounded-full blur-3xl"/></div><div class="section-container text-center flex flex-col items-center gap-6 relative z-10 reveal"><div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-primary-100 text-xs font-bold uppercase tracking-[0.15em] px-4 py-1.5 rounded-full"><span class="i-carbon-rocket"/>Get Started Today</div><h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight">Ready to structure
+your data?</h2><p class="text-lg text-primary-100/80 max-w-xl leading-relaxed">Join thousands of developers and marketers who use JSON LD Visual Editor to create perfect structured data in minutes.</p><div class="flex flex-wrap items-center justify-center gap-4 mt-4"><a class="btn-accent text-lg px-8 py-3.5" href="#"><span class="i-carbon-play"/>Get Started for Free</a><a class="bg-white/10 hover:bg-white/20 text-white font-semibold rounded-xl px-6 py-3 transition-all duration-200 inline-flex items-center justify-center gap-2 cursor-pointer no-underline border border-white/20" href="#"><span class="i-carbon-document"/>Read Documentation</a></div></div></section></main><footer class="footer"><div class="w-full max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-8"><div class="col-span-2 md:col-span-1 flex flex-col gap-4"><div class="flex items-center gap-2.5"><div class="w-9 h-9 rounded-xl bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center shadow-lg shadow-primary-500/20"><span class="i-carbon-semantic-web text-white text-lg"/></div><span class="font-extrabold text-surface-900 dark:text-white text-lg">JSON LD Editor</span></div><p class="text-sm text-surface-500 dark:text-surface-400 leading-relaxed">The visual way to build structured data for the modern web.</p><div class="flex items-center gap-3"><a class="text-surface-400 hover:text-primary-500 transition-colors" href="#"><span class="i-carbon-logo-github text-xl"/></a><a class="text-surface-400 hover:text-primary-500 transition-colors" href="#"><span class="i-carbon-logo-twitter text-xl"/></a><a class="text-surface-400 hover:text-primary-500 transition-colors" href="#"><span class="i-carbon-logo-discord text-xl"/></a></div></div><div class="flex flex-col gap-3"><h4 class="font-bold text-surface-900 dark:text-white text-sm uppercase tracking-wider">Product</h4><a class="text-sm text-surface-500 dark:text-surface-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors no-underline" href="#">Features</a><a class="text-sm text-surface-500 dark:text-surface-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors no-underline" href="#">Pricing</a><a class="text-sm text-surface-500 dark:text-surface-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors no-underline" href="#">Templates</a><a class="text-sm text-surface-500 dark:text-surface-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors no-underline" href="#">Changelog</a></div><div class="flex flex-col gap-3"><h4 class="font-bold text-surface-900 dark:text-white text-sm uppercase tracking-wider">Resources</h4><a class="text-sm text-surface-500 dark:text-surface-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors no-underline" href="#">Documentation</a><a class="text-sm text-surface-500 dark:text-surface-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors no-underline" href="#">Blog</a><a class="text-sm text-surface-500 dark:text-surface-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors no-underline" href="#">Schema.org</a><a class="text-sm text-surface-500 dark:text-surface-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors no-underline" href="#">Support</a></div><div class="flex flex-col gap-3"><h4 class="font-bold text-surface-900 dark:text-white text-sm uppercase tracking-wider">Legal</h4><a class="text-sm text-surface-500 dark:text-surface-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors no-underline" href="#">Privacy</a><a class="text-sm text-surface-500 dark:text-surface-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors no-underline" href="#">Terms</a><a class="text-sm text-surface-500 dark:text-surface-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors no-underline" href="#">License</a></div></div><div class="w-full max-w-7xl mx-auto mt-12 pt-8 border-t border-surface-200/60 dark:border-surface-800/60 flex flex-col sm:flex-row items-center justify-between gap-4"><p class="text-sm text-surface-500 dark:text-surface-400">2024 JSON LD Visual Editor. All rights reserved.</p><p class="text-xs text-surface-400 dark:text-surface-500">Built with &#x2764;&#xFE0F; for the web community</p></div></footer><script type="text/javascript">(function() {
+  const toggle = document.getElementById('dark-mode-toggle');
+  const html = document.documentElement;
+  const stored = localStorage.getItem('dark-mode');
+  if (stored === 'true' || (!stored && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    html.classList.add('amp-dark-mode');
+  }
+  if (toggle) {
+    toggle.addEventListener('click', () => {
+      html.classList.toggle('amp-dark-mode');
+      localStorage.setItem('dark-mode', html.classList.contains('amp-dark-mode'));
+    });
+  }
+})();</script><script type="text/javascript">(function() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+  document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+})();</script><script type="text/javascript">// ─── Serverpod Web Client Bootstrap ───────────────────────────────────────
+// Auto-generated — edit lib/client_script.dart to change this script.
+// ──────────────────────────────────────────────────────────────────────────
+(function() {
+  "use strict";
+
+  // Configuration
+  window.__jsonLdConfig__ = {
+    serverUrl: "http://localhost:8080/",
+  };
+
+  // Placeholder for the future Serverpod JS client.
+  // When the Serverpod JS SDK is available, initialize it here:
+  //
+  //   import { Client } from 'https://cdn.serverpod.dev/client.js';
+  //   window.jsonLdClient = new Client(window.__jsonLdConfig__.serverUrl);
+  //   await window.jsonLdClient.auth.initialize();
+  //
+  // For now, we expose a stub so future page scripts can check readiness.
+  window.jsonLdClient = {
+    serverUrl: window.__jsonLdConfig__.serverUrl,
+    ready: false,
+    auth: {
+      initialize: async function() {
+        console.log('[JSON LD Editor] Auth initialized (stub).');
+        this.isAuthenticated = false;
+        return this;
+      },
+      isAuthenticated: false,
+    },
+    greeting: {
+      hello: async function(name) {
+        console.log('[JSON LD Editor] greeting.hello("' + name + '") — endpoint not yet connected.');
+        return { message: "Hello, " + name + "!" };
+      },
+    },
+    connect: async function() {
+      console.log('[JSON LD Editor] Connecting to', this.serverUrl, '...');
+      this.ready = true;
+      return this;
+    },
+  };
+
+  // Auto-connect on load
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", () => {
+      window.jsonLdClient.connect().catch(console.error);
+    });
+  } else {
+    window.jsonLdClient.connect().catch(console.error);
+  }
+
+  console.log('[JSON LD Editor] Client bootstrap loaded. Server:', window.__jsonLdConfig__.serverUrl);
+})();
+</script></body></html>

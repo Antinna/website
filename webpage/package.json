@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "dev": "unocss lib/**/*.{dart,html,xml} -o lib/css/output.css --watch",
+    "build": "unocss lib/**/*.{dart,html,xml} -o lib/css/output.css"
+  },
+  "dependencies": {
+    "@unocss/cli": "^66.11.0",
+    "unocss": "^66.11.0"
+  }
+}

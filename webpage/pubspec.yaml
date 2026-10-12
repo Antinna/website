@@ -1,0 +1,19 @@
+name: webpage
+description: A sample webpage.
+version: 1.0.0
+# repository: https://github.com/my_org/my_repo
+
+environment:
+  sdk: ^3.14.0-211.1.beta
+
+# Add regular dependencies here.
+dependencies:
+  blogger_theme: ^6.0.0
+  website_client:
+    path: ../website_client
+  path: ^1.9.0
+  web: ^1.1.1
+
+dev_dependencies:
+  lints: ^6.0.0
+  test: ^1.25.6
