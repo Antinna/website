@@ -7,14 +7,14 @@ import 'package:path/path.dart' as path;
 
 // button(
 // {'class': 'icon-btn', 'id': 'dark-mode-toggle', 'type': 'button'},
-// [span({'class': 'i-carbon-moon text-lg'}, [])],
+// [span({'class': 'i-carbon-moon text-lg'}, [])], // and sun icon
 // ),
 Component darkModeScript() {
   return script(
     {'type': 'text/javascript'},
     [
       Text( // this script is very small don't ever try to port it to dart as
-        // dart scripts ar bulky and we need faster native stuffs so....
+        // dart scripts are bulky and we need faster native stuffs so.. keep it simple..
         escape: false,
         '''(function() { 
   const toggle = document.getElementById('dark-mode-toggle');
@@ -39,7 +39,7 @@ Component darkModeScript() {
 /// Embeds the Serverpod client bootstrap script.
 Component clientBootstrapScript() {
 
-  return BClientScript(
+  return BClientScript( // in future we
     "lib/scripts/script.dart",
 
    attributes:  {'type': 'text/javascript'},
@@ -68,7 +68,7 @@ Component landingPage(String css) {
           {
             'name': 'description',
             'content':
-                'Build, validate, and export JSON-LD structured data visually. No coding required.',
+                '...',
           },
         ),
         meta(
@@ -106,6 +106,7 @@ Component landingPage(String css) {
   body(
 
     // here
+    [clientBootstrapScript()]
   )
     ],
   );
