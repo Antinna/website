@@ -17,7 +17,7 @@ B extends BuildModeInterface
 typedef AppFlavorConfig = FlavorConfig<Flavor, BuildMode>;
 
 const String appFlavor = String.fromEnvironment(
-  'FLUTTER_APP_FLAVOR',
+  'WEB_FLAVOR',
   defaultValue: 'production', // or development as per your need
 );
 
