@@ -1,4 +1,3 @@
-
 import 'package:web/web.dart' as web;
 // ignore: depend_on_referenced_packages
 import 'package:serverpod_auth_core_client/serverpod_auth_core_client.dart';
@@ -43,10 +42,12 @@ class WebCookieKeyValueStorage implements KeyValueStorage {
     final encodedKey = Uri.encodeComponent(key);
     if (value == null || value.isEmpty) {
       // Expire the cookie immediately to delete it
-      web.document.cookie = '$encodedKey=; Max-Age=0; path=$path; SameSite=$sameSite${secure ? '; Secure' : ''}';
+      web.document.cookie =
+          '$encodedKey=; Max-Age=0; path=$path; SameSite=$sameSite${secure ? '; Secure' : ''}';
     } else {
       final encodedValue = Uri.encodeComponent(value);
-      var cookieStr = '$encodedKey=$encodedValue; Max-Age=${maxAge.inSeconds}; path=$path; SameSite=$sameSite';
+      var cookieStr =
+          '$encodedKey=$encodedValue; Max-Age=${maxAge.inSeconds}; path=$path; SameSite=$sameSite';
       if (secure) {
         cookieStr += '; Secure';
       }

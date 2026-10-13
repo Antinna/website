@@ -1,4 +1,5 @@
 import 'package:serverpod_auth_core_client/serverpod_auth_core_client.dart';
+
 import 'web_cookie_key_value_storage.dart';
 
 /// A [ClientAuthSuccessStorage] implementation that persists authentication
@@ -12,15 +13,15 @@ class WebCookieClientAuthSuccessStorage extends CachedClientAuthSuccessStorage {
     String sameSite = 'Lax',
     String? authSuccessStorageKey,
   }) : super(
-    delegate: KeyValueClientAuthSuccessStorage(
-      keyValueStorage: WebCookieKeyValueStorage(
-        maxAge: maxAge,
-        path: path,
-        domain: domain,
-        secure: secure,
-        sameSite: sameSite,
-      ),
-      authSuccessStorageKey: authSuccessStorageKey,
-    ),
-  );
+         delegate: KeyValueClientAuthSuccessStorage(
+           keyValueStorage: WebCookieKeyValueStorage(
+             maxAge: maxAge,
+             path: path,
+             domain: domain,
+             secure: secure,
+             sameSite: sameSite,
+           ),
+           authSuccessStorageKey: authSuccessStorageKey,
+         ),
+       );
 }

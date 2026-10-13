@@ -1,7 +1,7 @@
 import 'dart:async';
+
 import 'package:serverpod_auth_core_client/serverpod_auth_core_client.dart';
 import 'package:webpage/scripts/session_storage/client_auth_storage.dart';
-
 
 /// The [WebAuthSessionManager] tracks and manages the user's signed-in state
 /// for pure Dart web applications using cookie storage and reactive streams.
@@ -14,8 +14,8 @@ class WebAuthSessionManager extends ClientAuthSessionManager {
     required void Function(AuthSuccess?) onAuthInfoChanged,
     super.caller,
     super.authKeyProviderDelegates,
-  })  : _authInfoStreamController = authInfoStreamController,
-        super(onAuthInfoChanged: onAuthInfoChanged);
+  }) : _authInfoStreamController = authInfoStreamController,
+       super(onAuthInfoChanged: onAuthInfoChanged);
 
   factory WebAuthSessionManager({
     Caller? caller,
@@ -62,13 +62,13 @@ extension WebAuthSessionManagerExtension on ServerpodClientShared {
     if (currentProvider == null) {
       throw StateError(
         'To access the auth instance, first instantiate the session manager '
-            'and set it as the "authKeyProvider" on the client.',
+        'and set it as the "authKeyProvider" on the client.',
       );
     }
     if (currentProvider is! WebAuthSessionManager) {
       throw StateError(
         'The "authKeyProvider" is set to an unsupported type. Expected '
-            '"WebAuthSessionManager", got "${currentProvider.runtimeType}".',
+        '"WebAuthSessionManager", got "${currentProvider.runtimeType}".',
       );
     }
     return currentProvider;

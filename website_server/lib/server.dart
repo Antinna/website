@@ -35,6 +35,16 @@ void run(List<String> args) async {
     ],
   );
 
+  // Serve the greeting webpage.
+  pod.webServer.addRoute(
+    StaticRoute.file(
+      File(
+        Uri(path: 'web/pages/greeting.html').toFilePath(),
+      ),
+    ),
+    '/greeting',
+  );
+
   // Serve all files in the web/static relative directory under /web.
   // These are used by the default web page.
   pod.webServer.addRoute(

@@ -1,5 +1,3 @@
-
-
 part 'flavor_interface.dart';
 
 class Flavor implements FlavorInterface {
@@ -27,5 +25,4 @@ class Flavor implements FlavorInterface {
     if (_customUrl != null) return _customUrl;
     return 'http://$localhost:8080';
   }
-
 }

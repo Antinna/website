@@ -1,15 +1,13 @@
-
 import 'flavor.dart';
 import 'build_mode/build_mode_interface.dart';
 
 /// Uses primary constructor declaring parameters (`final F flavor`, `final B buildMode`)
 /// which implicitly induces instance fields.
 final class const FlavorConfig<
-F extends FlavorInterface,
-B extends BuildModeInterface
+  F extends FlavorInterface,
+  B extends BuildModeInterface
 >({required final F flavor, required final B buildMode}) {
   String get baseUrl => flavor.baseUrl;
-
 }
 
 /// Explicitly typing the concrete `BuildMode` enum here ensures that
