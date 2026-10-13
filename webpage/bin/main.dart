@@ -10,13 +10,13 @@ String generate(Component component) {
 }
 
 void main() async {
-  final page = await webpage.main();
-  final htmlOutput = generate(page);
+  final landingPage = await webpage.main();
+  final landingPageHtmlTextOutput = generate(landingPage);
 
   // Write to build/index.html
   final outputFile = File('build/index.html');
   outputFile.createSync(recursive: true);
-  await outputFile.writeAsString(htmlOutput);
+  await outputFile.writeAsString(landingPageHtmlTextOutput);
 
   print('Landing page generated successfully!');
   print('Output: ${outputFile.path}');
